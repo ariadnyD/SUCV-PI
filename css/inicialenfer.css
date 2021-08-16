@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+body{
+	margin: 0;
+	height: 100vh;
+	width: 100vw;
+	background:#F7F7E8;
+}
+header{
+	top: 0;
+	width: 100%;
+	height: 7rem;
+	background-color: #9DAD7F;
+	display: flex;
+	align-items: center;
+}
+.logoimg{
+	width: 5em;
+	height:5em;
+	margin-left: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	background-color:black; 
+	border-radius: 25rem;
+}
+.logo{
+	display: flex;
+	align-items: center;
+}
+.logotxt{
+	font-family: Noto Serif Bold;
+	margin-left:0.5rem;
+}
+
+.search-box{
+	position: absolute;
+	top:40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #9DAD7F;
+	height: 2rem;
+	padding: 1rem;
+	border-radius: 4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#p1{
+	left:30%;
+}
+#p2{
+	left:67%;
+}
+.search-txt{
+	border: none;
+	background: none;
+	outline: none;
+	padding: 0;
+	color: #f0f5fb;
+	padding:0 0.6rem;
+	font-size: 1.1rem;
+	line-height: 4rem;
+	font-family: Noto Serif;
+}
+::-webkit-input-placeholder{
+	color:#557174;
+}
+.search-btn{
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	background: #9DAD7F;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.search-box:hover > .search-btn{
+	background: #C7CFB7;
+}
+.botao{
+	border-radius: 0.5rem;
+	color:black;
+	font-size: 1.4rem;
+	line-height: 1.5rem;
+	font-family: Noto Serif;
+	background: #9DAD7F;
+	height: 5.8rem;
+	width:15rem;
+	padding: 1rem;
+	border:0;
+	margin-bottom: 1em;
+	padding: 0.2em 0.6em;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0,5);
+	position: absolute;
+	top: 63%;
+	left:50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+#b1{
+	left: 20%;
+
+}
+#b2{
+	left: 48%;
+}
+#b3{
+	left: 75%;
+}
+.botao:hover{
+	background: #C7CFB7;
+	box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+	text-shadow: none;
+}
+.botao {
+	cursor: pointer;
+}
