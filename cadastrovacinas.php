@@ -9,6 +9,7 @@ if(isset($_POST['nomevac'])){
 	}
 }
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">

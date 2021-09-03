@@ -84,6 +84,7 @@ header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+    border: none;
 }
 .search-box:hover > .search-btn{
 	background: #F7F7E8;
