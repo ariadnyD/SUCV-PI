@@ -5,23 +5,42 @@
 #titulo{
 	font-family: sans-serif;
 	color: #497F78;
-	margin-left: 5%;
+	margin-left: 3%;
 }
 #subt{
 	font-family: sans-serif;
 	color: #557174;
-	margin-left: 3%;
+}
+.titulo{
+	position: absolute;
+	left: 48%;
+	top: 10%;
+	transform: translate(-50%, -50%);
+	display: block;
+}
+.form{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+}
+#vacinas{
+	top: 28%;
+}
+#vacinacao{
+	top: 50%;
+}
+#pessoas{
+	top:32%;
 }
 body{
-	background-color: #A6BFBC;
+	background-color: #F7F7E8;
 	font-family: sans-serif;
 	font-size: 1em;
 	color: #66B3AB;
-	margin-left: 33%;
-	margin-top: 2%;
 	justify-content: center;
 }
-input, button{
+input, textarea, button{
 	font-family: sans-serif;
 	font-size: 1em;
 	color: #557174;
@@ -33,15 +52,15 @@ input, button{
     position: relative;
 }
 .camp label{
-	margin-bottom: 0.2em;
+	width: 10em;
 	color:#66B3AB;
 	position: absolute;
     top: 5%;
-    left: 21%;
+    left:-60%;
     transform: translate(-50%, -50%);
 	display: block;
 }
-.camp input[type="text"], .camp input[type="date"]{
+.camp input[type="text"], .camp input[type="date"], .camp textarea{
 	padding: 0.2em;
 	border:1px solid #9DAD7F;
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
@@ -52,12 +71,11 @@ input, button{
     width: 23rem;
 	display: block;
 }
-.camp input:focus{
-	background: #66B3AB;
-}
 #desc{
-	margin-top: 2rem;
-	height: 5rem;
+	top:4.5rem;
+}
+.camp input:focus, .camp textarea:focus{
+	background: #66B3AB;
 }
 .botao{
 	font-size: 1.2em;
@@ -70,14 +88,13 @@ input, button{
 	text-shadow: 1px 1px 1px rgba(0,0,0,0,5);
 	position: relative;
 	left:21%;
-	margin-right: -50%;
 	transform: translate(-50%, -50%);
 }
 #b1{
 	top:0.5rem;
 }
 #b2{
-	top:4.2rem;
+	top:5.6rem;
 }
 #b3{
 	top:0.5rem;
@@ -89,4 +106,53 @@ input, button{
 }
 .botao {
 	cursor: pointer;
+}
+@media (min-width: 2560px ){
+	#titulo{
+		font-size:5rem;
+		width: 100%;
+		margin-left: 3%;
+	}
+	#subt{
+		font-size: 2.5rem;
+	}
+	#vacinas{
+		top: 34%;
+	}
+	#vacinacao{
+		top: 65%;
+	}
+	#pessoas{
+		top:40%;
+	}
+	body{
+		font-size: 2em;
+	}
+	input, textarea, button{
+		border-radius: 10px;
+	}
+	.camp input[type="text"], .camp input[type="date"], .camp textarea{
+		border:2px solid #9DAD7F;
+		box-shadow: 4px 4px 4px rgba(0,0,0,0.4);
+		width: 23em;
+	}
+	#desc{
+		top:9rem;
+	}
+	.botao{
+		box-shadow: 4px 4px 4px rgba(0,0,0,0.4);
+		text-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+	}
+	#b1{
+		top:0.5rem;
+	}
+	#b2{
+		top:12rem;
+	}
+	#b3{
+		top:0.5rem;
+	}
+	.botao:hover{
+		box-shadow: inset 4px 4px 4px rgba(0,0,0,0.4);
+	}
 }

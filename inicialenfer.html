@@ -4,26 +4,34 @@
 	<meta charset="utf-8">
 	<title>Pagina Inicial Enfermeiro</title>
 	<link rel="stylesheet" type="text/css" href="css/inicialenfer.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="icon" sizes="57x57" href="imagens/aba/icon.png">  
 </head>
 <body>
 	<header>
 		<div class="logo">
-			<div class="logoimg"></div>
+			<img class="logoimg" src="imagens/logo.png">
 			<div class="logotxt">
 				<h1>SUCV</h1>
 			</div>
+		</div>
+		<div class="menu">
+			<a class="title" href="#">PESSOAS CADASTRADAS</a>
+			<a class="title" href="#">VACINAS CADASTRADAS</a>
 		</div>
 	</header>
 	<div class="search-box" id=p1>
 		<input type="text" class="search-txt" placeholder="Pesquisar Pessoa">
 		<a href="#" class="search-btn">
-			<img src="img/306102.svg" alt="lupa" height="20" width="20">
+			<img src="assents/306102.svg" alt="lupa" height="20" width="20">
 		</a>
 	</div>
 	<div class="search-box" id="p2">
 		<input type="text" class="search-txt" placeholder="Pesquisar Vacina">
 		<a href="#" class="search-btn">
-			<img src="img/306102.svg" alt="lupa" height="20" width="20">
+			<img src="assents/306102.svg" alt="lupa" height="20" width="20">
 		</a>
 	</div>
 	<button onclick="b1v()" id="b1" class="botao" type="button">Cadastrar Vacina</button>
@@ -32,13 +40,13 @@
 
 	<script type="text/javascript">
 		function b1v(){
-			window.location.href = "cadastrovacinas.html";
+			window.location.href = "cadastrovacinas.php";
 		}
 		function b2p(){
-			window.location.href = "cadastropessoas.html"
+			window.location.href = "cadastropessoas.php"
 		}
 		function b3v(){
-			window.location.href = "cadastrovacinacao.html"
+			window.location.href = "cadastrovacinacao.php"
 		}
 	</script>
 </body>
