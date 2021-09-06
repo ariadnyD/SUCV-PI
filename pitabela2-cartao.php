@@ -1,10 +1,10 @@
 <?php
-include("config.php");
+include("configXampp.php");
 $codigo = $_GET['codigo'];
-$consulta2 = $conexao->query("select * from tb_pacientes where pac_codigo = $codigo");
-$resultado2= $consulta2->fetch_assoc();
+$consulta = $conexao->query("SELECT vac_nome, van_lote, van_data, enf_nome, van_ubs from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo");
 
-$consulta = $conexao->query("select vac_nome, van_lote, van_data, enf_nome, van_ubs from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo where pac_codigo = $codigo");
+$consulta2 = $conexao->query("SELECT * from tb_pacientes where pac_codigo = $codigo");
+$resultado2= $consulta2->fetch_assoc();
 ?> 
 <!DOCTYPE html>
 <html>
@@ -24,13 +24,10 @@ $consulta = $conexao->query("select vac_nome, van_lote, van_data, enf_nome, van_
 				</div>
 			</div>
 		</header>
-		<form action="#" method="POST">
-		    <input type="text" name="search" id="search" placeholder="Faça sua busca" required>
-			<button type="submit"> <i class="fas fa-search"></i></button>
-		</form>
+		<br>
 		<h3> Cartão de Vacina: </h3>
 	    <table border="1">
-		    <thead>
+			<thead>
 		    	<tr>
 		    		<th colspan="5"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
 			    </tr>
@@ -41,7 +38,7 @@ $consulta = $conexao->query("select vac_nome, van_lote, van_data, enf_nome, van_
 				    <td> UBS </td>
 			    </tr>
 			</thead>
-<?php $resultado = $consulta->fetch_assoc()?>
+<?php while ($resultado= $consulta->fetch_assoc()) { ?>
 			<tbody>
 			    <tr> 
 			        <td id="vacina" onclick="location.href = 'pitabela3-vacinas.php';" style="cursor: hand;"><?php echo $resultado['vac_nome']; ?></td>
@@ -51,8 +48,8 @@ $consulta = $conexao->query("select vac_nome, van_lote, van_data, enf_nome, van_
 				    <td><?php echo $resultado['van_ubs'];?></td>
 			    </tr>
 			</tbody>
+<?php } ?>
 		</table>
 		<br>
-		<a href="pitabela1-pessoas.php"> Voltar </a>
 	</body>
 </html>
