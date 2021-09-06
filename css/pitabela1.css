@@ -5,6 +5,7 @@ body{
 	height: 100vh;
 	width: 100vw;
 	background:#F7F7E8;
+	font:500 1rem "Noto Serif";
 }
 header{
 	top: 0;
@@ -16,8 +17,8 @@ header{
 	align-items: center;
 }
 #logoimg{
-	width: 3.5rem;
-    height: 3.5rem;
+	width: 4rem;
+    height: 4rem;
     padding: 1rem 0 0.5rem 1rem;
 }
 .logo{
@@ -26,14 +27,15 @@ header{
 }
 .logotxt{
 	font: 700 1.5rem;
-	margin-left:0.5rem;
+	margin-left: 0.3rem;
 }
-form{
-	padding-top: 3rem;
-	margin-left: 5px;
+#search{
+	margin-top: 3rem;
+	height: 1rem;
+	width: 15rem;
 }
-table{
-	border-style:hidden;
+.tabelas{
+	border-style: hidden;
 	margin-left: 5px;
 }
 thead{
@@ -59,4 +61,35 @@ h3{
 #vacina:hover {
 	text-decoration: underline;
 	background-color: #9DE3A8;
+}
+@media (min-width: 2560px ){
+	header{
+		height: 14rem;
+	}
+	#logoimg{
+		width: 7em;
+		height: 7em;
+	}
+	.logotxt{
+		font-size: 2rem;
+	}
+	th{
+		font-size: 32px;
+	}
+	td{
+		font-size: 32px;	
+	}
+	h3{
+		font-size: 38px;
+	}
+	#search{
+		margin-top: 5.5rem;
+		height: 2rem;
+		width: 25rem;
+		font-size: 20px;
+	}
+	#botao{
+	    height: 2.5rem;
+	    width: 2.5rem;
+    }
 }

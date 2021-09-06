@@ -1,5 +1,7 @@
 <?php
 include("config.php");
+$consulta = $conn->query("SELECT * from tb_vacinas");
+include("config.php");
 $consulta = $conn->query("select * from tb_vacinas");
 if(isset($_GET['vacina'])){
 	$vacina=$_GET['vacina'];
@@ -7,6 +9,7 @@ if(isset($_GET['vacina'])){
 	}else{
 		echo "Não foi possivel encontrar nada!";
 	}
+	$consulta = $conn->query("select * from tb_vacinas");
 }
 ?>
 <!DOCTYPE html>
@@ -29,10 +32,10 @@ if(isset($_GET['vacina'])){
 		</header>
 		<form action="#" method="post">
 		    <input type="text" name="search" id="search" placeholder="Faça sua busca" required>
-			<button type="submit"> <i class="fas fa-search"></i></button>
+			<button type="submit" id="botao"> <i class=" fas fa-search"></i></button>
 		</form>
 		<h3> Vacinas: </h3>
-	    <table border="1">
+	    <table border="1" class="tabelas">
 		    <thead>
 			    <tr>
 				    <td> # </td>
@@ -40,7 +43,22 @@ if(isset($_GET['vacina'])){
 				    <td> DESCRIÇÃO </td>
 			    </tr>
 			</thead>
-<?php while($resultado = $consulta->fetch_assoc()){ ?>
+<?php if(isset($_POST['search'])){
+      $search = $_POST['search'];
+      if($consulta2 = $conn->query("SELECT * from tb_vacinas where vac_nome like '%$search%'")){
+        $resultado2 = $consulta2->fetch_assoc();
+      ?>
+            <tbody>
+			    <tr> 
+			        <td><?php echo $resultado2['vac_codigo'];?></td>
+				    <td><?php echo $resultado2['vac_nome'];?></td>
+				    <td><?php echo $resultado2['vac_descricao'];?></td>
+			    </tr>
+			</tbody>
+<?php }else {
+		echo "Vacina não encontrada!";
+	  }
+	   } else { while($resultado = $consulta->fetch_assoc()){ ?>
 			<tbody>
 			    <tr> 
 			        <td><?php echo $resultado['vac_codigo'];?></td>
@@ -48,9 +66,8 @@ if(isset($_GET['vacina'])){
 				    <td><?php echo $resultado['vac_descricao'];?></td>
 			    </tr>
 			</tbody>
-<?php }?>
+<?php }}?>
 		</table>
 		<br>
-		<a href="pitabela2-cartao.php"> Voltar </a>
 	</body>
 </html>
