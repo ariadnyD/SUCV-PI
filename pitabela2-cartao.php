@@ -1,17 +1,14 @@
 <?php
-include("configXampp.php");
+include("config.php");
 $codigo = $_GET['codigo'];
-<<<<<<< HEAD
-$consulta = $conexao->query("SELECT vac_nome, van_lote, van_data, enf_nome, van_ubs from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo");
+$consulta = $conn->query("SELECT vac_nome, van_lote, van_data, enf_nome, van_ubs from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo");
 
-$consulta2 = $conexao->query("SELECT * from tb_pacientes where pac_codigo = $codigo");
+$consulta2 = $conn->query("SELECT * from tb_pacientes where pac_codigo = $codigo");
 $resultado2= $consulta2->fetch_assoc();
-=======
 $consulta2 = $conn->query("select * from tb_pacientes where pac_codigo = $codigo");
 $resultado2= $consulta2->fetch_assoc();
 
 $consulta = $conn->query("select vac_nome, van_lote, van_data, enf_nome, van_ubs from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo where pac_codigo = $codigo");
->>>>>>> 04f36153956afc8e872f117f93c12ef892b19558
 ?> 
 <!DOCTYPE html>
 <html>

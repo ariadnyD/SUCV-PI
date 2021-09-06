@@ -1,8 +1,6 @@
 <?php
-<<<<<<< HEAD
-include("configXampp.php");
-$consulta = $conexao->query("SELECT * from tb_pacientes");
-=======
+include("config.php");
+$consulta = $conn->query("SELECT * from tb_pacientes");
 include("config.php");
 $consulta = $conn->query("SELECT * from tb_pacientes");
 if(isset($_GET['pessoa'])){
@@ -12,7 +10,6 @@ if(isset($_GET['pessoa'])){
 		echo "Não foi possivel encontrar nada!";
 	}
 }
->>>>>>> 04f36153956afc8e872f117f93c12ef892b19558
 ?>
 <!DOCTYPE html>
 <html>

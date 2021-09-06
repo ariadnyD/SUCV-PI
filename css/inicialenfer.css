@@ -28,7 +28,7 @@ header{
 .logoimg{
 	width: 4.5rem;
     height: 4.5rem;
-    padding: 1.35rem 0 0.5rem 0;
+    padding: 1.35rem 0 0.5rem 1rem;
 }
 .logo{
 	display: flex;
@@ -37,10 +37,9 @@ header{
 }
 .logotxt{
 	font: 500 1.5rem 'Mitr';
-	margin-left:0.5rem;
 	color: whitesmoke;
 	padding-top: 1rem;
-    margin-left: 0.89rem;
+    margin-left: 0.3rem;
 }
 
 .search-box{
@@ -74,7 +73,7 @@ header{
 	font-family:'Noto Serif';
 }
 ::-webkit-input-placeholder{
-	color:#557174;
+	color:black;
 }
 .search-btn{
 	width: 2.5rem;
@@ -87,7 +86,7 @@ header{
     border: none;
 }
 .search-box:hover > .search-btn{
-	background: #F7F7E8;
+	background:whitesmoke;
 }
 .botao{
 	border-radius: 0.5rem;
