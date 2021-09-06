@@ -24,8 +24,6 @@ html {
 
 body {
     font: 500 1rem var(--body-font);
-    font: 500 1rem 'Noto serif';
-    
     color:var(--text-color) ;
     overflow-x: hidden;
     background-color: #F7F7E8;
