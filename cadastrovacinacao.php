@@ -9,6 +9,7 @@ if(isset($_POST['codp'])){
 	}
 }
 ?>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
 	<meta charset="utf-8">

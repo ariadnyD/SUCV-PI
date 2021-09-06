@@ -1,6 +1,18 @@
 <?php
+<<<<<<< HEAD
 include("configXampp.php");
 $consulta = $conexao->query("SELECT * from tb_vacinas");
+=======
+include("config.php");
+$consulta = $conn->query("select * from tb_vacinas");
+if(isset($_GET['vacina'])){
+	$vacina=$_GET['vacina'];
+	if($consulta=$conn->query("select * from tb_vacinas where vac_nome like '$vacina'")){
+	}else{
+		echo "Não foi possivel encontrar nada!";
+	}
+}
+>>>>>>> 04f36153956afc8e872f117f93c12ef892b19558
 ?>
 <!DOCTYPE html>
 <html>

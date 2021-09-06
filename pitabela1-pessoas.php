@@ -1,6 +1,18 @@
 <?php
+<<<<<<< HEAD
 include("configXampp.php");
 $consulta = $conexao->query("SELECT * from tb_pacientes");
+=======
+include("config.php");
+$consulta = $conn->query("SELECT * from tb_pacientes");
+if(isset($_GET['pessoa'])){
+	$pessoa=$_GET['pessoa'];
+	if($consulta=$conn->query("select * from tb_pacientes where pac_cartsus like '$pessoa'")){
+	}else{
+		echo "Não foi possivel encontrar nada!";
+	}
+}
+>>>>>>> 04f36153956afc8e872f117f93c12ef892b19558
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +49,7 @@ $consulta = $conexao->query("SELECT * from tb_pacientes");
 			</thead>
 <?php if(isset($_POST['search'])){
       $search = $_POST['search'];
-      if($consulta2 = $conexao->query("SELECT * from tb_pacientes where pac_cartsus like '$search'")){
+      if($consulta2 = $conn->query("SELECT * from tb_pacientes where pac_cartsus like '$search'")){
         $resultado2 = $consulta2->fetch_assoc();
       ?>
 			<tbody>
