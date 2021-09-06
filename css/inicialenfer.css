@@ -18,12 +18,11 @@ header{
 .title{
 	text-decoration: none;
 	padding: 1rem 1rem;
-	font-size: 1.5rem;
 	color: whitesmoke;
-	font-family: 'Noto Serif - Bold';
+	font: 700 1.7rem 'Noto Serif' ;
 }
 .title:hover{
-    color: lightseagreen;
+    color: rgb(23, 95, 92);
     transition: color 0.5s;
 }
 .logoimg{
@@ -34,11 +33,14 @@ header{
 .logo{
 	display: flex;
 	align-items: center;
+	
 }
 .logotxt{
 	font: 500 1.5rem 'Mitr';
 	margin-left:0.5rem;
 	color: whitesmoke;
+	padding-top: 1rem;
+    margin-left: 0.89rem;
 }
 
 .search-box{
