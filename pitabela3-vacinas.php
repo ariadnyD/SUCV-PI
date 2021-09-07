@@ -1,6 +1,11 @@
 <?php
 include("config.php");
 $consulta = $conn->query("SELECT * from tb_vacinas");
+if(isset ($_GET['codigo'])){
+	$codigo = $_GET['codigo'];
+	if($consulta = $conn->query("SELECT * from tb_vacinas where vac_codigo = $codigo")){
+	}
+}
 if(isset($_GET['vacina'])){
 	$vacina=$_GET['vacina'];
 	if($consulta=$conn->query("select * from tb_vacinas where vac_nome like '$vacina'")){

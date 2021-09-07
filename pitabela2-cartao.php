@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 $codigo = $_GET['codigo'];
-$consulta = $conn->query("SELECT vac_nome, van_dose, van_lote, van_data, enf_nome, van_ubs from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo");
+$consulta = $conn->query("SELECT vac_nome, van_dose, van_lote, van_data, enf_nome, van_ubs, vac_codigo from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo");
 
 $consulta2 = $conn->query("SELECT * from tb_pacientes where pac_codigo = $codigo");
 $resultado2= $consulta2->fetch_assoc();
@@ -48,7 +48,7 @@ $resultado2= $consulta2->fetch_assoc();
 <?php while ($resultado= $consulta->fetch_assoc()) { ?>
 			<tbody>
 			    <tr> 
-			        <td id="vacina" onclick="location.href = 'pitabela3-vacinas.php';" style="cursor: hand;"><?php echo $resultado['vac_nome']; ?></td>
+			    	<td id="vacina" onclick="location.href = 'pitabela3-vacinas.php?codigo=<?php echo $resultado['vac_codigo'];?>'; "style="cursor: hand;"><?php echo $resultado['vac_nome']; ?></td>
 			        <td><?php echo $resultado['van_dose'];?></td>
 				    <td><?php echo $resultado['van_lote'];?></td>
 				    <td><?php echo $resultado['van_data'];?></td>
