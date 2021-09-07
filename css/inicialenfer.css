@@ -26,9 +26,10 @@ header{
     transition: color 0.5s;
 }
 .logoimg{
-	width: 4.5rem;
+    width: 4.5rem;
     height: 4.5rem;
-    padding: 1.35rem 0 0.5rem 1rem;
+    padding: 1rem 0 0.5rem 1rem;
+    padding-left: 2.5rem;
 }
 .logo{
 	display: flex;
@@ -36,10 +37,9 @@ header{
 	
 }
 .logotxt{
-	font: 400 1.6rem 'Mitr';
+    font: 400 1.6rem 'Mitr';
 	color: whitesmoke;
-	padding-top: 0.5rem;
-    margin-left: 0.3rem;
+	margin-left: 0.3rem;
 }
 
 .search-box{
