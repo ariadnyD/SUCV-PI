@@ -13,6 +13,12 @@ $resultado2= $consulta2->fetch_assoc();
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title> SUCV - Cartão de Vacinas </title>
 		<link rel="stylesheet" type="text/css" href ="css/pitabela1.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap" rel="stylesheet">
+		<link rel="icon" sizes="57x57" href="imagens/aba/icon.png">
+		
 		<script src="https://kit.fontawesome.com/0b07c232ad.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
