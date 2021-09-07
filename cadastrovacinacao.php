@@ -1,5 +1,7 @@
 <?php 
 include("config.php");
+$consulta = $conn->query("select * from tb_vacinas");
+$consulta2 = $conn->query("select * from tb_enfermeiros");
 if(isset($_POST['codp'])){
 	extract($_POST);
 	if($inserir=$conn->query("insert into tb_vacinacao (van_pac_codigo, van_vac_codigo, van_enf_codigo, van_dose, van_lote, van_ubs, van_data) values ('$codp', '$codv','$code', '$dose', '$lote', '$ubs', '$data')")){
@@ -29,8 +31,13 @@ if(isset($_POST['codp'])){
 			<input id="codp" type="text" name="codp" required>
 		</div>
 		<div class="camp">
-			<label>Código da Vacina</label>
-			<input id="codv" type="text" name="codv" required>
+			<label>Vacina</label>
+			<select id="codv" name="codv" required>
+				<option value="" selected disabled hidden>Selecione aqui</option>
+				<?php while ($resultado= $consulta->fetch_assoc()) { ?>
+					<option value="<?php echo $resultado['vac_codigo']; ?>"><?php echo $resultado['vac_nome']; ?></option>
+				<?php } ?>
+			</select>
 		</div>
 		<div class="camp">
 			<label>Dose</label>
@@ -45,12 +52,17 @@ if(isset($_POST['codp'])){
 			<input id="ubs" type="text" name="ubs">
 		</div>
 		<div class="camp">
-			<label>Código do Enfermeiro</label required>
-			<input id="code" type="text" name="code">
+			<label>Enfermeiro</label required>
+			<select id="code" name="code" required>
+				<option value="" selected disabled hidden>Selecione aqui</option>
+				<?php while ($resultado1= $consulta2->fetch_assoc()) { ?>
+					<option value="<?php echo $resultado1['enf_codigo']; ?>"><?php echo $resultado1['enf_nome']; ?></option>
+				<?php } ?>
+			</select>
 		</div>
 		<div class="camp">
 			<label>Data</label required>
-			<input id="code" type="date" name="data">
+			<input id="cod" type="date" name="data">
 		</div>
 		<button id="b3" class="botao" type="submit">Cadastrar</button>
 	</form>
