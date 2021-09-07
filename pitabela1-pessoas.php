@@ -1,11 +1,9 @@
 <?php
 include("config.php");
 $consulta = $conn->query("SELECT * from tb_pacientes");
-include("config.php");
-$consulta = $conn->query("SELECT * from tb_pacientes");
 if(isset($_GET['pessoa'])){
 	$pessoa=$_GET['pessoa'];
-	if($consulta=$conn->query("select * from tb_pacientes where pac_cartsus like '$pessoa'")){
+	if($consulta=$conn->query("SELECT * from tb_pacientes where pac_cartsus like '$pessoa'")){
 	}else{
 		echo "Não foi possivel encontrar nada!";
 	}
