@@ -24,6 +24,8 @@ html {
 
 body {
     font: 500 1rem var(--body-font);
+    font: 500 1rem 'Noto serif';
+    
     color:var(--text-color) ;
     overflow-x: hidden;
     background-color: #F7F7E8;
@@ -45,7 +47,8 @@ body {
 #logo-s{
     width: 4.5rem;
     height: 4.5rem;
-    padding: 1.35rem 0 0.5rem 0;
+    padding-top: 1.3rem;
+    margin-left: -0.5rem;
 }
 
 .logo {
@@ -53,7 +56,7 @@ body {
     font-size: 3rem;
     color: whitesmoke;
     padding-top: 1rem;
-    margin-left: 0.89rem;
+    margin-left: 0.9rem;
 }
 
 nav {
@@ -133,6 +136,7 @@ nav .menu {
 	font-size: 1.1rem;
 	line-height: 4rem;
     font: 400 1rem var(--body-font);
+    width: 450px;
 }
 
 ::-webkit-input-placeholder{
@@ -146,6 +150,8 @@ nav .menu {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+    background: #66B3AB;
+    border: none;
 }
 
 .search-btn:hover{
@@ -326,7 +332,7 @@ footer{
 @media (min-width: 1300px) {
     
     .logo {
-        transform: translateX(-6rem);
+        transform: translateX(-5rem);
     }
     
     nav ul li{
