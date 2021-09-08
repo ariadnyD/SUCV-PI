@@ -30,6 +30,7 @@ if (isset($_POST['email'])) {
   <link rel="icon" sizes="57x57" href="imagens/aba/icon.png">
 </head>
 
+
 <body>
   <div id="login-container">
     <h1 id="titulo">Login</h1><?php if ($erro == 1) echo "<br><span style='color:red'>Email ou senha inválida, tente novamente.</span><br>"; ?>
