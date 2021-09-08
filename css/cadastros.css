@@ -25,13 +25,13 @@
 	display: block;
 }
 #vacinas{
-	top: 29%;
+	top: 31%;
 }
 #vacinacao{
-	top: 52.7%;
+	top: 53%;
 }
 #pessoas{
-	top:33%;
+	top:35%;
 }
 body{
 	background-color: #F7F7E8;
@@ -75,7 +75,7 @@ textarea:focus,input:focus, select:focus{
 	display: block;
 }
 #desc{
-	top:5rem;
+	top:5.3rem;
 }
 .camp input:focus, .camp textarea:focus, .camp select:focus{
 	border: 2px solid #5cd3d0;
@@ -102,7 +102,7 @@ input:hover, textarea:hover, select:hover{
 	top:0.5rem;
 }
 #b2{
-	top:6.5rem;
+	top:6.8rem;
 }
 #b3{
 	top:0.5rem;
