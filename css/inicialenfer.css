@@ -37,9 +37,10 @@ header{
 	
 }
 .logotxt{
-    font: 400 1.6rem 'Mitr';
+	font: 400 2.5rem 'Mitr';
 	color: whitesmoke;
-	margin-left: 0.3rem;
+    margin-left: 0.5rem;
+	font-size: 3rem;
 }
 
 .search-box{
