@@ -38,16 +38,16 @@ textarea:focus,input:focus, select:focus{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	display: block;
+	margin-top: 1rem;
 }
 #vacinas{
-	top: 31%;
+	top: 26%;
 }
 #vacinacao{
-	top: 52%;
-	padding: 2rem;
+	top: 50%;
 }
 #pessoas{
-	top:35%;
+	top:32%;
 }
 .camp{
 	margin-bottom: 1em;
