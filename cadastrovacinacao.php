@@ -26,46 +26,48 @@ if(isset($_POST['codp'])){
 		<p id="subt">Cadastre a vacinação preenchendo os dados abaixo</p>
 		<br>
 	</div>
-	<form id="vacinacao" class="form" action="?" method="POST">
-		<div class="camp">
-			<label>Código da Pesssoa</label>
-			<input id="codp" type="text" name="codp" required>
-		</div>
-		<div class="camp">
-			<label>Vacina</label>
-			<select id="codv" name="codv" required>
-				<option value="" selected disabled hidden>Selecione aqui</option>
-				<?php while ($resultado= $consulta->fetch_assoc()) { ?>
-					<option value="<?php echo $resultado['vac_codigo']; ?>"><?php echo $resultado['vac_nome']; ?></option>
-				<?php } ?>
-			</select>
-		</div>
-		<div class="camp">
-			<label>Dose</label>
-			<input id="dose" type="text" name="dose">
-		</div>
-		<div class="camp">
-			<label>Lote</label>
-			<input id="lote" type="text" name="lote">
-		</div>
-		<div class="camp">
-			<label>UBS</label>
-			<input id="ubs" type="text" name="ubs">
-		</div>
-		<div class="camp">
-			<label>Enfermeiro</label required>
-			<select id="code" name="code" required>
-				<option value="" selected disabled hidden>Selecione aqui</option>
-				<?php while ($resultado1= $consulta2->fetch_assoc()) { ?>
+	<div id="vacinacao" class="form">
+		<form action="?" method="POST">
+			<div class="camp">
+				<label>Código da Pesssoa</label>
+				<input id="codp" type="text" name="codp" required>
+			</div>
+			<div class="camp">
+				<label>Vacina</label>
+				<select id="codv" name="codv" required>
+					<option value="" selected disabled hidden>Selecione aqui</option>
+					<?php while ($resultado= $consulta->fetch_assoc()) { ?>
+						<option value="<?php echo $resultado['vac_codigo']; ?>"><?php echo $resultado['vac_nome']; ?></option>
+					<?php } ?>
+				</select>
+			</div>
+			<div class="camp">
+				<label>Dose</label>
+				<input id="dose" type="text" name="dose">
+			</div>
+			<div class="camp">
+				<label>Lote</label>
+				<input id="lote" type="text" name="lote">
+			</div>
+			<div class="camp">
+				<label>UBS</label>
+				<input id="ubs" type="text" name="ubs">
+			</div>
+			<div class="camp">
+				<label>Enfermeiro</label required>
+				<select id="code" name="code" required>
+					<option value="" selected disabled hidden>Selecione aqui</option>
+					<?php while ($resultado1= $consulta2->fetch_assoc()) { ?>
 					<option value="<?php echo $resultado1['enf_codigo']; ?>"><?php echo $resultado1['enf_nome']; ?></option>
-				<?php } ?>
-			</select>
-		</div>
-		<div class="camp">
-			<label>Data</label required>
-			<input id="cod" type="date" name="data">
-		</div>
-		<button id="b3" class="botao" type="submit">Cadastrar</button>
-	</form>
+						<?php } ?>
+				</select>
+			</div>
+			<div class="camp">
+				<label>Data</label required>
+					<input id="cod" type="date" name="data">
+			</div>
+			<button id="b3" class="botao" type="submit">Cadastrar</button>
+		</form>
+	</div>
 </body>
 </html>
