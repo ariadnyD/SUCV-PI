@@ -25,9 +25,10 @@ header{
 	align-items: center;
 }
 .logotxt{
-	font: 400 1.6rem 'Mitr';
+	font: 400 2.5rem 'Mitr';
 	color: whitesmoke;
-	margin-left: 0.3rem;
+    margin-left: 0.8rem;
+	font-size: 3rem;
 }
 #search{
 	margin-top: 3rem;
