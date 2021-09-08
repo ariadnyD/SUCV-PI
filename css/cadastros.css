@@ -18,21 +18,6 @@
 	transform: translate(-50%, -50%);
 	display: block;
 }
-.form{
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	display: block;
-}
-#vacinas{
-	top: 31%;
-}
-#vacinacao{
-	top: 53%;
-}
-#pessoas{
-	top:35%;
-}
 body{
 	background-color: #F7F7E8;
 	font:550 1rem "Noto Serif";
@@ -47,6 +32,22 @@ input, textarea, button, select{
 }
 textarea:focus,input:focus, select:focus{
 	outline: none;
+}
+.form{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+}
+#vacinas{
+	top: 31%;
+}
+#vacinacao{
+	top: 52%;
+	padding: 2rem;
+}
+#pessoas{
+	top:35%;
 }
 .camp{
 	margin-bottom: 1em;
