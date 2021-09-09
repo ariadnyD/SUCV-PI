@@ -27,7 +27,7 @@ if(isset($_POST['codp'])){
 		<p id="subt">Cadastre a vacinação preenchendo os dados abaixo</p>
 		<br>
 	</div>
-	<form action="?" method="POST">
+	<form id="vacinacao" class="form" action="?" method="POST">
 		<div class="camp">
 			<label>Código da Pesssoa</label>
 			<input id="codp" type="text" name="codp" required>
