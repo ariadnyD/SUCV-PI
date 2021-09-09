@@ -17,7 +17,6 @@ if(isset($_POST['codp'])){
 	<meta charset="utf-8">
 	<title>Cadastro de Vacinação</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" type="text/css" href="css/cadastros.css">
 	<link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 </head>
