@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/inicio.css">
     
     <!--fontes do body-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +24,14 @@
         <header id = "header">
             <title>SUVC</title>
             <nav class="container"> <!--NAVEGAÇÃO DA HEADER-->
-                <img id = "logo-s" src="assets/logo/logo.png" alt="Logo do site: uma injenção caindo uma gota">
-                <a href="#" class="logo">SUCV</a>
+                <img id = "icon-logo" src="assets/logo/logo.png" alt="Logo do site: uma injenção caindo uma gota">
+                <a href="#home" class="logo">SUCV</a>
                 <div class="menu">
                     <ul>
                         <li><a class="title" href="#home">HOME</a></li>
                         <li><a class="title" href="#about">SOBRE</a></li>
                         <li><a class="title" href="#contact">CONTATO</a></li>
-                        <li><a class = "button" href="#">LOGIN</a></li>
+                        <li><a class = "button" href="login.php">LOGIN</a></li>
                     </ul>
                 </div>
             </nav>
@@ -48,8 +48,8 @@
                     <img src="assets/body/imagem1.png" alt="Foto de uma senhora se vacinando.">
                 </div>
 
-                <form class="busca" method="GET" action="pitabela3-vacinas.php">
-                    <input type="search" class="bText" placeholder="Inserir nº do cartão do SUS">
+                <form class="search" method="GET" action="pitabela3-vacinas.php">
+                    <input type="text" class="bText" placeholder="Inserir nº do cartão do SUS">
                     <button class="search-btn">
                         <img src="assets/body/search.svg" alt="Lupa de busca" height="25" width="25">
                     </button>
@@ -97,7 +97,7 @@
     </body>
 
     <footer class = "section" id = "contact">
-        <div class="inf">
+        <div class="information">
             <h2>CONTATO</h2>
             <p>EMAIL: sucv@rn.gov.br</p>
             <p>TELEFONE: (84) 4002-8922</p>
