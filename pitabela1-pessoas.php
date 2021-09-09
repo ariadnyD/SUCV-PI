@@ -3,7 +3,7 @@ include("config.php");
 $consulta = $conn->query("SELECT * from tb_pacientes");
 if(isset($_GET['pessoa'])){
 	$pessoa=$_GET['pessoa'];
-	if($consulta=$conn->query("SELECT * from tb_pacientes where pac_cartsus like '$pessoa'")){
+	if($consulta=$conn->query("SELECT * from tb_pacientes where pac_cartsus like '%$pessoa%' or pac_nome like '%$pessoa%'")){
 	}else{
 		echo "Não foi possivel encontrar nada!";
 	}
