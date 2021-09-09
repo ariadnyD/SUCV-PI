@@ -8,7 +8,7 @@ if(isset ($_GET['codigo'])){
 }
 if(isset($_GET['vacina'])){
 	$vacina=$_GET['vacina'];
-	if($consulta=$conn->query("select * from tb_vacinas where vac_nome like '$vacina'")){
+	if($consulta=$conn->query("select * from tb_vacinas where vac_nome like '%$vacina%'")){
 	}else{
 		echo "Não foi possivel encontrar nada!";
 	}
