@@ -31,8 +31,8 @@ $resultado2= $consulta2->fetch_assoc();
 			</div>
 		</header>
 		<br>
-		<h3> Cartão de Vacina: </h3>
-	    <table border="1">
+		<div class="body"><h3> Cartão de Vacina: </h3>
+	    <table border="1" class="tabelas">
 			<thead>
 		    	<tr>
 		    		<th colspan="6"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
@@ -57,7 +57,6 @@ $resultado2= $consulta2->fetch_assoc();
 			    </tr>
 			</tbody>
 <?php } ?>
-		</table>
-		<br>
+		</table></div>
 	</body>
 </html>

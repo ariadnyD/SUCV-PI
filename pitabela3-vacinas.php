@@ -1,10 +1,11 @@
 <?php
 include("config.php");
-$consulta = $conn->query("SELECT * from tb_vacinas");
 if(isset ($_GET['codigo'])){
 	$codigo = $_GET['codigo'];
 	if($consulta = $conn->query("SELECT * from tb_vacinas where vac_codigo = $codigo")){
 	}
+}else{
+	$consulta = $conn->query("SELECT * from tb_vacinas");
 }
 if(isset($_GET['vacina'])){
 	$vacina=$_GET['vacina'];
@@ -12,6 +13,8 @@ if(isset($_GET['vacina'])){
 	}else{
 		echo "Não foi possivel encontrar nada!";
 	}
+}else{
+	$consulta = $conn->query("SELECT * from tb_vacinas");
 }
 ?>
 <!DOCTYPE html>
@@ -38,10 +41,12 @@ if(isset($_GET['vacina'])){
 				</div>
 			</div>
 		</header>
-		<form action="#" method="post">
-		    <input type="text" name="search" id="search" placeholder="Faça sua busca" required>
-			<button type="submit" id="botao"> <i class=" fas fa-search"></i></button>
-		</form>
+		<div class="body"><form class="search-box" id=p1 method="POST" action="#">
+		<input type="text" name="vac"class="search-txt" placeholder="Pesquisa de vacina">
+		<button class="search-btn">
+			<img src="assets/306102.svg" alt="lupa" height="20" width="20">
+		</button>
+	</form>
 		<h3> Vacinas: </h3>
 	    <table border="1" class="tabelas">
 		    <thead>
@@ -51,9 +56,9 @@ if(isset($_GET['vacina'])){
 				    <td> DESCRIÇÃO </td>
 			    </tr>
 			</thead>
-<?php if(isset($_POST['search'])){
-      $search = $_POST['search'];
-      if($consulta2 = $conn->query("SELECT * from tb_vacinas where vac_nome like '%$search%'")){
+<?php if(isset($_POST['vac'])){
+      $searchv = $_POST['vac'];
+      if($consulta2 = $conn->query("SELECT * from tb_vacinas where vac_nome like '%$searchv%'")){
         $resultado2 = $consulta2->fetch_assoc();
       ?>
             <tbody>
@@ -75,7 +80,6 @@ if(isset($_GET['vacina'])){
 			    </tr>
 			</tbody>
 <?php }}?>
-		</table>
-		<br>
+		</table></div>
 	</body>
 </html>
