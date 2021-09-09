@@ -34,9 +34,11 @@ if(isset($_GET['pessoa'])){
 				</div>
 			</div>
 		</header>
-		<div class="body"><form action="#" method="post">
-		    <input type="text" name="search" id="search" placeholder="Faça sua busca pelo Cartão do SUS" required>
-			<button type="submit" id="botao"> <i class=" fas fa-search"></i></button>
+		<div class="body"><form class="search-box" id=p1 method="POST" action="#">
+			<input type="text" name="pessoa"class="search-txt" placeholder="Pesquisa de Paciente">
+			<button class="search-btn">
+				<img src="assets/306102.svg" alt="lupa" height="20" width="20">
+			</button>
 		</form>
 		<h3> Pessoas Encontradas: </h3>
 	    <table border="1" class="tabelas">
@@ -48,9 +50,9 @@ if(isset($_GET['pessoa'])){
 				    <td> DATA DE NASCIMENTO </td> 
 			    </tr>
 			</thead>
-<?php if(isset($_POST['search'])){
-      $search = $_POST['search'];
-      if($consulta2 = $conn->query("SELECT * from tb_pacientes where pac_cartsus like '$search'")){
+<?php if(isset($_POST['pessoa'])){
+      $search = $_POST['pessoa'];
+      if($consulta2 = $conn->query("SELECT * from tb_pacientes where pac_cartsus like '%$search%'")){
         $resultado2 = $consulta2->fetch_assoc();
       ?>
 			<tbody>
