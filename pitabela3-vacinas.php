@@ -32,7 +32,7 @@ if(isset($_GET['vacina'])){
 	<body>
 		<header>
 			<div class="logo">
-				<img id = "logoimg" src="imagens/logo/logo.png" alt="logo do site">
+				<img id = "logoimg" src="assets/logo/logo.png" alt="logo do site">
 				<div class="logotxt">
 					<p>SUCV</p>
 				</div>
