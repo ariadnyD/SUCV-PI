@@ -7,14 +7,14 @@ if(isset($_GET['pessoa'])){
 	}else{
 		echo "Não foi possivel encontrar nada!";
 	}
-}
+} 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
 	    <meta charset = "utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Pessoas Cadastradas | SUCV</title>
+	    <title> Pessoas Cadastradas | SUCV</title>
 		<link rel="stylesheet" type="text/css" href ="css/pitabela1.css">
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,12 +34,12 @@ if(isset($_GET['pessoa'])){
 				</div>
 			</div>
 		</header>
-		<form action="#" method="post">
-		    <input type="text" name="search" id="search" placeholder="Faça sua busca" required>
+		<div class="body"><form action="#" method="post">
+		    <input type="text" name="search" id="search" placeholder="Faça sua busca pelo Cartão do SUS" required>
 			<button type="submit" id="botao"> <i class=" fas fa-search"></i></button>
 		</form>
 		<h3> Pessoas Encontradas: </h3>
-	    <table border="1">
+	    <table border="1" class="tabelas">
 		    <thead>
 			    <tr>
 				    <td> # </td>
@@ -74,7 +74,6 @@ if(isset($_GET['pessoa'])){
 			    </tr>
 			</tbody>
  <?php }}?>
-		</table>
-		<br>
+		</table> </div>
 	</body>
 </html>

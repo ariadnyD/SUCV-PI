@@ -38,8 +38,8 @@ if(isset($_GET['vacina'])){
 				</div>
 			</div>
 		</header>
-		<form action="#" method="post">
-		    <input type="text" name="search" id="search" placeholder="Faça sua busca" required>
+		<div class="body"><form action="#" method="post">
+		    <input type="text" name="search" id="search" placeholder="Faça sua busca pelo nome da vacina" required>
 			<button type="submit" id="botao"> <i class=" fas fa-search"></i></button>
 		</form>
 		<h3> Vacinas: </h3>
@@ -75,7 +75,6 @@ if(isset($_GET['vacina'])){
 			    </tr>
 			</tbody>
 <?php }}?>
-		</table>
-		<br>
+		</table></div>
 	</body>
 </html>
