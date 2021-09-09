@@ -31,7 +31,7 @@ if ($_POST) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cadastro</title>
   <link rel="stylesheet" href="css/cadastro.css" />
-  <link rel="icon" sizes="57x57" href="imagens/aba/icon.png" />
+  <link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 </head>
 
 <body>

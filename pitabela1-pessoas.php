@@ -21,7 +21,7 @@ if(isset($_GET['pessoa'])){
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap" rel="stylesheet">
-		<link rel="icon" sizes="57x57" href="imagens/aba/icon.png">
+		<link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 
 		<script src="https://kit.fontawesome.com/0b07c232ad.js" crossorigin="anonymous"></script>
 	</head>
