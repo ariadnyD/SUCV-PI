@@ -21,6 +21,10 @@ header{
 	color: whitesmoke;
 	font: 700 1.7rem 'Noto Serif';
 }
+.sair{
+	color: #A6BFBC;
+    margin-right: 2rem;
+}
 .title:hover{
     color: rgb(23, 95, 92);
     transition: color 0.5s;
