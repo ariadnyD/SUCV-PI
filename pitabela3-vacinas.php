@@ -8,7 +8,7 @@ if(isset ($_GET['codigo'])){
 }
 if(isset($_GET['vacina'])){
 	$vacina=$_GET['vacina'];
-	if($consulta=$conn->query("select * from tb_vacinas where vac_nome like '$vacina'")){
+	if($consulta=$conn->query("select * from tb_vacinas where vac_nome like '%$vacina%'")){
 	}else{
 		echo "Não foi possivel encontrar nada!";
 	}
@@ -25,14 +25,14 @@ if(isset($_GET['vacina'])){
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap" rel="stylesheet">
-		<link rel="icon" sizes="57x57" href="imagens/aba/icon.png">
+		<link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 		
 		<script src="https://kit.fontawesome.com/0b07c232ad.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<header>
 			<div class="logo">
-				<img id = "logoimg" src="imagens/logo/logo.png" alt="logo do site">
+				<img id = "logoimg" src="assets/logo/logo.png" alt="logo do site">
 				<div class="logotxt">
 					<p>SUCV</p>
 				</div>

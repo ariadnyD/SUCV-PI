@@ -27,7 +27,7 @@ if (isset($_POST['email'])) {
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
   <title>Login</title>
   <link rel="stylesheet" href="css/login.css" />
-  <link rel="icon" sizes="57x57" href="imagens/aba/icon.png">
+  <link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 </head>
 
 

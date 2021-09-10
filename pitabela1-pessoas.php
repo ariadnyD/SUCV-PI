@@ -3,11 +3,19 @@ include("config.php");
 $consulta = $conn->query("SELECT * from tb_pacientes");
 if(isset($_GET['pessoa'])){
 	$pessoa=$_GET['pessoa'];
-	if($consulta=$conn->query("SELECT * from tb_pacientes where pac_cartsus like '$pessoa'")){
+	if($consulta=$conn->query("SELECT * from tb_pacientes where pac_cartsus like '%$pessoa%' or pac_nome like '%$pessoa%'")){
 	}else{
 		echo "Não foi possivel encontrar nada!";
 	}
-} 
+}
+if(isset($_GET['excluir'])){
+	$codigo = $_GET['excluir'];
+	if($consulta2 = $conn->query("DELETE from tb_pacientes where pac_codigo = $codigo")){
+		header("Location: pitabela1-pessoas.php");
+	} else {
+		header("Location: pitabela1-pessoas.php");
+	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,6 +70,8 @@ if(isset($_GET['pessoa'])){
 				    <td id="cartao" onclick="location.href = 'pitabela2-cartao.php?codigo= <?php echo $resultado2['pac_codigo'];?>';"style="cursor: hand;" > <?php echo $resultado2['pac_nome']; ?> </td>
 				    <td> <?php echo $resultado2['pac_cartsus']; ?> </td>
 				    <td> <?php echo $resultado2['pac_dtnasc']; ?> </td>
+				    <td><a href="pacientes-editar.php?codigo=<?php echo $resultado2['pac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a>&nbsp;
+				    <a href="?excluir=<?php echo $resultado2['pac_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a></td>
 			    </tr>
 			</tbody>
 <?php }else {
@@ -74,6 +84,8 @@ if(isset($_GET['pessoa'])){
 				    <td id="cartao" onclick="location.href = 'pitabela2-cartao.php?codigo= <?php echo $resultado['pac_codigo'];?>';"style="cursor: hand;" > <?php echo $resultado['pac_nome']; ?> </td>
 				    <td> <?php echo $resultado['pac_cartsus']; ?> </td>
 				    <td> <?php echo $resultado['pac_dtnasc']; ?> </td>
+				    <td>&nbsp;<a href="pacientes-editar.php?codigo=<?php echo $resultado['pac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a> 
+				    <a href="?excluir=<?php echo $resultado['pac_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a></td>
 			    </tr>
 			</tbody>
  <?php }}?>
