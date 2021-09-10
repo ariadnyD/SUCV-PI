@@ -48,6 +48,7 @@ if(isset($_GET['pessoa'])){
 				    <td> NOME </td>
 				    <td> CARTÃO DO SUS </td>
 				    <td> DATA DE NASCIMENTO </td> 
+				    <td> </td>
 			    </tr>
 			</thead>
 <?php if(isset($_POST['pessoa'])){
