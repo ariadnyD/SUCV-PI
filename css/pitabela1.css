@@ -106,6 +106,7 @@ h3{
 		font-size: 6rem;
 	}
 	.search-box{
+		margin-top: 4rem;
 		height: 2rem;
 		width: 40rem;
 		padding: 2rem;
@@ -132,12 +133,6 @@ h3{
 	}
 	h3{
 		font-size: 38px;
-	}
-	#search{
-		margin-top: 5.5rem;
-		height: 2rem;
-		width: 25rem;
-		font-size: 20px;
 	}
 	#botao{
 	    height: 2.5rem;

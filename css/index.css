@@ -24,7 +24,6 @@ html {
 
 body {
     font: 500 1rem var(--body-font);
-    font: 500 1rem 'Noto serif';
     
     color:var(--text-color) ;
     overflow-x: hidden;
@@ -48,7 +47,7 @@ body {
     width: 4.5rem;
     height: 4.5rem;
     padding-top: 1.3rem;
-    margin-left: -0.5rem;
+    margin-left: 0.5rem;
 }
 
 .logo {
@@ -56,7 +55,7 @@ body {
     font-size: 3rem;
     color: whitesmoke;
     padding-top: 1rem;
-    margin-left: 0.9rem;
+    margin-right: 6.5rem;
 }
 
 nav {
@@ -67,7 +66,7 @@ nav {
 
 nav ul li{
     display: inline-block;
-    padding-left: 8rem;
+    padding-left: 5rem;
     align-content: space-between;
 }
 
@@ -174,18 +173,18 @@ nav .menu {
     margin: 0;
 }
 
-#about .txt h1{
+#about .box-text h1{
     text-align: center;
     margin-bottom: 2rem;
 }
 
-#about .txt p{
+#about .box-text p{
     text-align: justify;
     font: 500 1.3rem var(--body-font);
     text-indent: 50px;
 }
 
-.txt h2{
+.box-text h2{
     text-align: center;
     margin-top: 4rem;
 }
@@ -235,128 +234,94 @@ footer{
 /******RESPONSIVO******/
 
 @media (min-width: 2560px ) { /*monitor ultra wide*/
+    
+    .nav-bar {
+        margin-left: 25rem;
+    }
+
+    .menu {
+        margin-right: 60rem;
+    }
+
     .container {
-        margin: 0 25rem 0 25rem;
+        margin: 1rem 26rem;
     }
-    #header{
-        height: 7rem;
+
+    #icon-logo {
+        width: 5.5rem;
+        height: 5.5rem;
     }
-    
-    #logo-s{
-        width: 5rem;
-        height: 5rem;
-        transform: translateX(-1.8rem);
-    }
-    
+
     .logo {
-        margin-left: -81rem;
-        margin-top: 1rem;
+        font-size: 4rem;
+        padding-top: 0.7rem;
     }
 
-    nav ul li {
-        padding-top: 0.5rem;
-        transform: translateX(-68rem);
-    }
-
-    nav ul li a {
-        font-size: 2rem;
-    }
-
-    #home .text h1 {
-        padding-top: 2rem;
+    nav ul li a{
         font-size: 2.5rem;
     }
 
-    .image img {
-        width: 40rem;
-        height: 30rem;
-        margin-left: 7rem;
+    #home .text h1{
+        font-size: 3rem;
     }
 
-    .busca{
-        top:63%;
-        left: 27%;
-        width: 36.5rem;
+    #home .image img {
+        width: 35rem;
+        height: 25rem;
+        margin-left: 8rem;
+    }
+
+    .search {
+        top: 55%;
+        left: 29%;
+        height: 2rem;
+        width: 40rem;
     }
     
     .bText{
-        font: 400 1.5rem var(--body-font);
+        padding: 1.5rem;
+        font-size: 1.5rem;
+    }
+    
+    .search-btn img{
+        width: 38px;
+        height: 40px;
+        padding-right: 1rem;
     }
 
-    .search-btn img {
-        width: 30px;
-        height: 30px;
+    #about {
+        margin-right: 6rem;
     }
-    
-    .divider-1{
-        width: 172rem;
+
+    #about .box-text p, h2{
+        font-size: 2.2rem;
     }
-    
-    #about .txt p, h2{
-        font-size: 2rem;
-    }
-    
-    .txt h1{
+
+    #about .box-text h1 {
         font-size: 2.5rem;
     }
 
-    #about .dev-image {
-        margin-left: 5.5rem;
+    .n img, .e img, .a img, .b img{
+        width: 16.8rem;
+        height: 18.5rem;
+        margin-left: 6rem;
     }
     
-    .n img, .e img, .a img {
-        width: 15.8rem;
-        height: 17.5rem;
+    .b img {
+        width: 18rem;
+        height: 18.4rem;
     }
     
-    .b img{
-        width: 16.45rem;
-        height: 17.5rem;
+    #contact .information {
+        margin-left: 25rem;
     }
 
-    #contact .information{
-        margin-left: 27rem;
-    }
-    
-    footer .information h2{
-        font-size: 2.3rem;
-    }
-    
-    footer .information p{
-        padding-top: 1.5rem;
-        font-size: 1.8rem;
-    } 
-
-}
-
-@media (min-width: 1300px) {
-    
-    .logo {
-        transform: translateX(-5rem);
-    }
-    
-    nav ul li{
-        padding-left: 4rem;
-        transform: translateX(-7rem);
+    #contact .information p{
+        font-size: 2.2rem;
     }
 
-    #home .text h1 {
-        margin-top: 0.4rem;
+    #contact .information h2{
+        font-size: 2.4rem;
     }
 
-    .busca{
-        top:60%;
-    }
-
-    .image img {
-        padding-left: 45rem;
-    }
-
-    #about .txt{
-        margin-right: 5.5rem;
-    }
-
-    #about .dev-image {
-        margin-left: -3rem;
-    }
 }

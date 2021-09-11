@@ -19,7 +19,11 @@ header{
 	text-decoration: none;
 	padding: 1rem 1rem;
 	color: whitesmoke;
-	font: 700 1.7rem 'Noto Serif' ;
+	font: 700 1.7rem 'Noto Serif';
+}
+.sair{
+	color: #A6BFBC;
+    margin-right: 2rem;
 }
 .title:hover{
     color: rgb(23, 95, 92);
@@ -99,8 +103,6 @@ header{
 	height: 5.8rem;
 	width:15rem;
 	border:0;
-	margin-bottom: 1em;
-	padding: 0.2em 0.6em;
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 	position: absolute;
@@ -116,7 +118,7 @@ header{
 	left: 48%;
 }
 #b3{
-	left: 75%;
+	left: 76%;
 }
 .botao:hover{
 	background: #C7CFB7;

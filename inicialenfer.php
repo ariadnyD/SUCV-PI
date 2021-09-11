@@ -9,12 +9,12 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap" rel="stylesheet">
-	<link rel="icon" sizes="57x57" href="imagens/aba/icon.png">  
+	<link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 </head>
 <body>
 	<header>
 		<div class="logo">
-			<img class="logoimg" src="imagens/logo/logo.png">
+			<img class="logoimg" src="assets/logo/logo.png">
 			<div class="logotxt">
 				<p>SUCV</p>
 			</div>
@@ -22,6 +22,7 @@
 		<div class="menu">
 			<a class="title" href="pitabela1-pessoas.php">PESSOAS CADASTRADAS</a>
 			<a class="title" href="pitabela3-vacinas.php">VACINAS CADASTRADAS</a>
+			<a class="title sair" href="index.html">SAIR</a>
 		</div>
 	</header>
 	<form class="search-box" id=p1 method="GET" action="pitabela1-pessoas.php">
