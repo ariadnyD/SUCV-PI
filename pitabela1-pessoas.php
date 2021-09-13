@@ -1,5 +1,6 @@
 <?php
 include("config.php");
+include("verifica.php");
 $consulta = $conn->query("SELECT * from tb_pacientes");
 if(isset($_GET['pessoa'])){
 	$pessoa=$_GET['pessoa'];
