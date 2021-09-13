@@ -38,12 +38,12 @@ if(isset($_GET['vacina'])){
 				</div>
 			</div>
 		</header>
-		<div class="body"><form class="search-box" id=p1 method="POST" action="#">
-		<input type="text" name="vac"class="search-txt" placeholder="Pesquisa de vacina">
-		<button class="search-btn">
-			<img src="assets/306102.svg" alt="lupa" height="20" width="20">
-		</button>
-	</form>
+		<div class="inferior"><form class="search-box" id=p1 method="POST" action="#">
+			<input type="text" name="vac"class="search-txt" placeholder="Pesquisa de vacina">
+			<button class="search-btn">
+				<img src="assets/306102.svg" alt="lupa" height="20" width="20">
+			</button>
+		</form>
 		<h3> Vacinas: </h3>
 	    <table border="1" class="tabelas">
 		    <thead>

@@ -31,7 +31,7 @@ $resultado2= $consulta2->fetch_assoc();
 			</div>
 		</header>
 		<br>
-		<div class="body"><h3> Cartão de Vacina: </h3>
+		<div class="inferior"><h3> Cartão de Vacina: </h3>
 	    <table border="1" class="tabelas">
 			<thead>
 		    	<tr>

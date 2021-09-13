@@ -29,20 +29,20 @@ if(isset($_GET['excluir'])){
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap" rel="stylesheet">
-		<link rel="icon" sizes="57x57" href="imagens/aba/icon.png">
+		<link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 
 		<script src="https://kit.fontawesome.com/0b07c232ad.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<header>
 			<div class="logo">
-				<img id = "logoimg" src="imagens/logo/logo.png" alt="logo do site">
+				<img id = "logoimg" src="assets/logo/logo.png" alt="logo do site">
 				<div class="logotxt">
 					<p> SUCV </p>
 				</div>
 			</div>
 		</header>
-		<div class="body"><form class="search-box" id=p1 method="POST" action="#">
+		<div class="inferior"><form class="search-box" id=p1 method="POST" action="#">
 			<input type="text" name="pessoa"class="search-txt" placeholder="Pesquisa de Paciente">
 			<button class="search-btn">
 				<img src="assets/306102.svg" alt="lupa" height="20" width="20">
