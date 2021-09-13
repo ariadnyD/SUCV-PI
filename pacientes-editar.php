@@ -28,11 +28,12 @@ $resultado2 = $consulta2->fetch_assoc();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" type="text/css" href="css/cadastros.css">
-	<link rel="icon" sizes="57x57" href="imagens/aba/icon.png">
+	<link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 </head>
 <body>
 	<div class="titulo">
-		<h1 id="titulo">Editar Cadastro de Pessoas</h1>
+		<h1 id="titulo">Atualizar Dados</h1>
+		<p id="subt">Atualize os dados da pessoa abaixo</p>
 		<br>
 	</div>
 	<form id="pessoas" class="form" action="?codigo=<?php echo $codigo; ?>" method="POST">
@@ -46,9 +47,9 @@ $resultado2 = $consulta2->fetch_assoc();
 		</div>
 		<div class="camp">
 			<label>Data de Nascimento</label>
-			<input id="nasd" type="date" name="nasc" value="<?php echo $resultado2['pac_dtnasc']; ?>" >
+			<input id="nasd" type="date" name="nasc" value="<?php echo $resultado2['pac_dtnasc']; ?>">
 		</div>
-		<button id="b1" class="botao" type="submit">Editar</button>
+		<button id="b1" class="botao" type="submit">Atualizar</button>
 	</form>
 </body>
 </html>
