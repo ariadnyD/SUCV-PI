@@ -30,8 +30,12 @@ header{
     margin-left: 0.5rem;
 	font-size: 3rem;
 }
-.body{
+.inferior{
 	margin-left: 5px;
+	position: absolute;
+	left: 50%;
+	top: 7rem;
+	transform: translateX(-50%);
 }
 .search-box{
 	margin-top: 2rem;

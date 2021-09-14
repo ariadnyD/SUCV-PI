@@ -1,10 +1,23 @@
 <?php
 include("config.php");
+$verif=0;
+@session_start();
+if(!isset($_SESSION['email'])){
+	$verif=1;
+}
 $codigo = $_GET['codigo'];
-$consulta = $conn->query("SELECT vac_nome, van_dose, van_lote, van_data, enf_nome, van_ubs, vac_codigo from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo");
-
+$consulta = $conn->query("SELECT * from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo");
+$resultado= $consulta->fetch_assoc();
 $consulta2 = $conn->query("SELECT * from tb_pacientes where pac_codigo = $codigo");
 $resultado2= $consulta2->fetch_assoc();
+if(isset($_GET['excluir'])){
+	$codigo = $_GET['excluir'];
+	if($consulta2 = $conn->query("DELETE from tb_vacinacao where van_codigo = $codigo")){
+		header("Location: pitabela2-cartao.php");
+	} else {
+		header("Location: pitabela2-cartao.php");
+	}
+}
 ?> 
 <!DOCTYPE html>
 <html>
@@ -31,9 +44,37 @@ $resultado2= $consulta2->fetch_assoc();
 			</div>
 		</header>
 		<br>
-		<div class="body"><h3> Cartão de Vacina: </h3>
+		<div class="inferior"><h3> Cartão de Vacina: </h3>
 	    <table border="1" class="tabelas">
+<?php if($verif=1){
+	?>
 			<thead>
+		    	<tr>
+		    		<th colspan="7"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
+			    </tr>
+				    <td> VACINA </td>
+				    <td> DOSE </td>
+				    <td> LOTE </td>
+				    <td> DATA </td>
+				    <td> APLICADOR </td>
+				    <td> UBS </td>
+				    <td>  </td>
+			    </tr>
+			</thead>
+	        <tbody>
+			    <tr> 
+			    	<td id="vacina" onclick="location.href = 'pitabela3-vacinas.php?codigo=<?php echo $resultado['vac_codigo'];?>'; "style="cursor: hand;"><?php echo $resultado['vac_nome']; ?></td>
+			        <td><?php echo $resultado['van_dose'];?></td>
+				    <td><?php echo $resultado['van_lote'];?></td>
+				    <td><?php echo $resultado['van_data'];?></td>
+				    <td><?php echo $resultado['enf_nome'];?></td>
+				    <td><?php echo $resultado['van_ubs'];?></td>
+				    <td><a href="cartao-editar.php?codigo=<?php echo $resultado['van_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a>&nbsp;
+				    <a href="?excluir=<?php echo $resultado['van_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a></td>
+			    </tr>
+			</tbody>
+<?php }else if ($verif=0){ while ($resultado= $consulta->fetch_assoc()) { ?>
+	        <thead>
 		    	<tr>
 		    		<th colspan="6"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
 			    </tr>
@@ -45,7 +86,6 @@ $resultado2= $consulta2->fetch_assoc();
 				    <td> UBS </td>
 			    </tr>
 			</thead>
-<?php while ($resultado= $consulta->fetch_assoc()) { ?>
 			<tbody>
 			    <tr> 
 			    	<td id="vacina" onclick="location.href = 'pitabela3-vacinas.php?codigo=<?php echo $resultado['vac_codigo'];?>'; "style="cursor: hand;"><?php echo $resultado['vac_nome']; ?></td>
@@ -56,7 +96,7 @@ $resultado2= $consulta2->fetch_assoc();
 				    <td><?php echo $resultado['van_ubs'];?></td>
 			    </tr>
 			</tbody>
-<?php } ?>
+<?php }} ?>
 		</table></div>
 	</body>
 </html>
