@@ -1,19 +1,20 @@
 <?php
 include("config.php");
 $codigo = $_GET['codigo'];
-$consulta3 = $conn->query("select * from tb_vacinacao where van_codigo = $codigo");
-$resultado3= $consulta3->fetch_assoc();
+
 if(isset($_POST['codv'])){
 	extract($_POST);
-	if($inserir = $conn->query("UPDATE tb_vacinacao set van_vac_codigo = '$codv', van_dose = '$dose', van_lote = '$lote', vac_enf_codigo = '$code', van_ubs = '$ubs', van_data = '$data' where van_codigo = $codigo")){
+	if($inserir = $conn->query("update tb_vacinacao set van_vac_codigo = '$codv', van_dose = '$dose', van_lote = '$lote', vac_enf_codigo = '$code', van_ubs = '$ubs', van_data = '$data' where van_codigo = $codigo")){
 		header("Location: pitabela1-pessoas.php");
 	}
 	else {
 		echo "Não foi possível alterar!";
 	}
 }
-$consulta = $conn->query("SELECT * from tb_vacinas");
-$consulta2 = $conn->query("SELECT * from tb_enfermeiros");
+$consulta = $conn->query("select * from tb_vacinas");
+$consulta2 = $conn->query("select * from tb_enfermeiros");
+$consulta3 = $conn->query("select * from tb_vacinacao where van_codigo = $codigo");
+$resultado3= $consulta3->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="pt">
