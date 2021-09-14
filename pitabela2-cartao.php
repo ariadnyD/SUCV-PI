@@ -1,10 +1,5 @@
 <?php
 include("config.php");
-$verif=0;
-@session_start();
-if(!isset($_SESSION['email'])){
-	$verif=1;
-}
 $codigo = $_GET['codigo'];
 $consulta = $conn->query("SELECT * from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo");
 $consulta2 = $conn->query("SELECT * from tb_pacientes where pac_codigo = $codigo");
