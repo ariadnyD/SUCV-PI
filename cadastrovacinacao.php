@@ -5,7 +5,7 @@ $consulta2 = $conn->query("select * from tb_enfermeiros");
 if(isset($_POST['codp'])){
 	extract($_POST);
 	if($inserir=$conn->query("insert into tb_vacinacao (van_pac_codigo, van_vac_codigo, van_enf_codigo, van_dose, van_lote, van_ubs, van_data) values ('$codp', '$codv','$code', '$dose', '$lote', '$ubs', '$data')")){
-		header("Location:inicialenfer.html");
+		header("Location:inicialenfer.php");
 	}else{
 		echo "Não foi possivel cadastrar a vacinação!";
 	}

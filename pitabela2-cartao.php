@@ -1,15 +1,18 @@
 <?php
 include("config.php");
-$codigo = $_GET['codigo'];
-$consulta = $conn->query("SELECT * from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo");
-$consulta2 = $conn->query("SELECT * from tb_pacientes where pac_codigo = $codigo");
-$resultado2= $consulta2->fetch_assoc();
+if(isset($_GET['codigo'])){
+	$codigo = $_GET['codigo'];
+	if($consulta = $conn->query("SELECT * from tb_vacinacao join tb_vacinas on vac_codigo = van_vac_codigo join tb_enfermeiros on enf_codigo = van_enf_codigo JOIN tb_pacientes on pac_codigo = van_pac_codigo where pac_codigo = $codigo")){
+		$consulta2 = $conn->query("SELECT * from tb_pacientes where pac_codigo = $codigo");
+		$resultado2= $consulta2->fetch_assoc();
+	}
+}
 if(isset($_GET['excluir'])){
-	$codigo = $_GET['excluir'];
-	if($consulta2 = $conn->query("DELETE from tb_vacinacao where van_codigo = $codigo")){
-		header("Location: pitabela2-cartao.php");
+	$excluir = $_GET['excluir'];
+	if($consulta3 = $conn->query("DELETE from tb_vacinacao where van_codigo = $excluir")){
+		header("Location: pitabela1-pessoas.php");
 	} else {
-		header("Location: pitabela2-cartao.php");
+		header("Location: pitabela1-pessoas.php");
 	}
 }
 ?> 
