@@ -34,7 +34,6 @@ if(isset($_POST['codp'])){
 		<div class="camp">
 			<label>Vacina</label>
 			<select id="codv" name="codv" required>
-				<option value="" selected disabled hidden>Selecione aqui</option>
 				<?php while ($resultado= $consulta->fetch_assoc()) { ?>
 					<option value="<?php echo $resultado['vac_codigo']; ?>"><?php echo $resultado['vac_nome']; ?></option>
 				<?php } ?>
@@ -55,7 +54,6 @@ if(isset($_POST['codp'])){
 		<div class="camp">
 			<label>Enfermeiro</label required>
 			<select id="code" name="code" required>
-				<option value="" selected disabled hidden>Selecione aqui</option>
 				<?php while ($resultado1= $consulta2->fetch_assoc()) { ?>
 					<option value="<?php echo $resultado1['enf_codigo']; ?>"><?php echo $resultado1['enf_nome']; ?></option>
 						<?php } ?>

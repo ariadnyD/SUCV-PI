@@ -63,7 +63,8 @@ if(isset($_GET['excluir'])){
 			</thead>
 	        <tbody>
 			    <tr> 
-			    	<td id="vacina" onclick="location.href = 'pitabela3-vacinas.php?codigo=<?php echo $resultado['vac_codigo'];?>'; "style="cursor: hand;"><?php echo $resultado['vac_nome']; ?></td>
+			    	<td id="vacina" style="cursor: hand;">
+			    		<a href="pitabela3-vacinas.php?codigo=<?php echo $resultado['vac_codigo'];?>"><?php echo $resultado['vac_nome']; ?></a></td>
 			        <td><?php echo $resultado['van_dose'];?></td>
 				    <td><?php echo $resultado['van_lote'];?></td>
 				    <td><?php echo $resultado['van_data'];?></td>
@@ -88,7 +89,8 @@ if(isset($_GET['excluir'])){
 			</thead>
 			<tbody>
 			    <tr> 
-			    	<td id="vacina" onclick="location.href = 'pitabela3-vacinas.php?codigo=<?php echo $resultado['vac_codigo'];?>'; "style="cursor: hand;"><?php echo $resultado['vac_nome']; ?></td>
+			    	<td id="vacina" style="cursor: hand;">
+			    		<a href="pitabela3-vacinas.php?codigo=<?php echo $resultado['vac_codigo'];?>"><?php echo $resultado['vac_nome']; ?></a></td>
 			        <td><?php echo $resultado['van_dose'];?></td>
 				    <td><?php echo $resultado['van_lote'];?></td>
 				    <td><?php echo $resultado['van_data'];?></td>
