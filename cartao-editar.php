@@ -1,10 +1,9 @@
 <?php
 include("config.php");
 $codigo = $_GET['codigo'];
-
 if(isset($_POST['codv'])){
 	extract($_POST);
-	if($inserir = $conn->query("update tb_vacinacao set van_vac_codigo = '$codv', van_dose = '$dose', van_lote = '$lote', vac_enf_codigo = '$code', van_ubs = '$ubs', van_data = '$data' where van_codigo = $codigo")){
+	if($inserir = $conn->query("update tb_vacinacao set van_vac_codigo = '$codv', van_dose = '$dose', van_lote = '$lote', van_enf_codigo = '$code', van_ubs = '$ubs', van_data = '$data' where van_codigo = $codigo")){
 		header("Location: pitabela1-pessoas.php");
 	}
 	else {
