@@ -66,8 +66,12 @@ if(isset($_GET['excluir'])){
 				    <td><?php echo $resultado['van_data'];?></td>
 				    <td><?php echo $resultado['enf_nome'];?></td>
 				    <td><?php echo $resultado['van_ubs'];?></td>
+				<?php 
+				@session_start();
+				if(isset($_SESSION['email'])){ ?>
 				    <td><a href="cartao-editar.php?codigo=<?php echo $resultado['van_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a>&nbsp;
 				    <a href="?excluir=<?php echo $resultado['van_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a></td>
+				<?php } ?>
 			    </tr>
 			</tbody>
 		<?php } ?>

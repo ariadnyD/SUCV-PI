@@ -1,6 +1,5 @@
 <?php
 include("config.php");
-include("verifica.php");
 $consulta = $conn->query("SELECT * from tb_pacientes");
 if(isset($_GET['pessoa'])){
 	$pessoa=$_GET['pessoa'];
@@ -57,7 +56,11 @@ if(isset($_GET['excluir'])){
 				    <td> NOME </td>
 				    <td> CARTÃO DO SUS </td>
 				    <td> DATA DE NASCIMENTO </td> 
+				<?php 
+				@session_start();
+				if(isset($_SESSION['email'])){ ?>
 				    <td> </td>
+				<?php } ?>
 			    </tr>
 			</thead>
 <?php if(isset($_POST['pessoa'])){
@@ -87,8 +90,12 @@ if(isset($_GET['excluir'])){
 				    	<a href="pitabela2-cartao.php?codigo= <?php echo $resultado['pac_codigo'];?>"><?php echo $resultado['pac_nome']; ?></a></td>
 				    <td> <?php echo $resultado['pac_cartsus']; ?> </td>
 				    <td> <?php echo $resultado['pac_dtnasc']; ?> </td>
+				<?php 
+				@session_start();
+				if(isset($_SESSION['email'])){ ?>
 				    <td>&nbsp;<a href="pacientes-editar.php?codigo=<?php echo $resultado['pac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a> 
 				    <a href="?excluir=<?php echo $resultado['pac_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a></td>
+				<?php } ?>
 			    </tr>
 			</tbody>
  <?php }}?>
