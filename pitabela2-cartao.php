@@ -45,7 +45,13 @@ if(isset($_GET['excluir'])){
 	    <table border="1" class="tabelas">
 			<thead>
 		    	<tr>
+		    		<?php 
+		    		@session_start();
+		    		if(isset($_SESSION['email'])){ ?>
 		    		<th colspan="7"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
+		    	<?php } else{ ?>
+		    		<th colspan="6"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
+		    	<?php }?>
 			    </tr>
 				    <td> VACINA </td>
 				    <td> DOSE </td>
@@ -53,7 +59,11 @@ if(isset($_GET['excluir'])){
 				    <td> DATA </td>
 				    <td> APLICADOR </td>
 				    <td> UBS </td>
+				    <?php 
+				    @session_start();
+				    if(isset($_SESSION['email'])){ ?>
 				    <td>  </td>
+				    <?php }?>
 			    </tr>
 			</thead>
 		<?php while ($resultado= $consulta->fetch_assoc()) { ?>
@@ -75,6 +85,8 @@ if(isset($_GET['excluir'])){
 			    </tr>
 			</tbody>
 		<?php } ?>
-		</table></div>
+		</table><?php @session_start();
+		if(isset($_SESSION['email'])){ ?><a href="inicialenfer.php">Pagina inicial enfermeiros</a>
+	<?php }?></div>
 	</body>
 </html>

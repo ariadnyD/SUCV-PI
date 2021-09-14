@@ -68,7 +68,7 @@ $resultado3= $consulta3->fetch_assoc();
 			<label>Data</label>
 			<input id="cod" type="date" name="data" value="<?php echo $resultado3['van_data']; ?>">
 		</div>
-		<button id="b3" class="botao" type="submit">Cadastrar</button>
+		<button id="b3" class="botao" type="submit">Editar</button>
 	</form>
 </body>
 </html>

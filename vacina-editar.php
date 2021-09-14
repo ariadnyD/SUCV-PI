@@ -3,11 +3,11 @@ include("config.php");
 $codigo = $_GET['codigo'];
 if(isset($_POST['nomevac'])){
 	extract($_POST);
-	if($inserir=$conn->query("UPDATE tb_vacina set 
+	if($inserir=$conn->query("UPDATE tb_vacinas set 
 		vac_nome = '$nomevac', 
 		vac_descricao = '$desc'
 		where vac_codigo = $codigo")){
-		header("pitabela3-vacinas.php");
+		header("Location: pitabela3-vacinas.php");
 	}else{
 		echo "Não foi possivel cadastrar a vacina!";
 	}
@@ -38,7 +38,7 @@ if(isset($_POST['nomevac'])){
 			<label for="desc">Descrição</label>
 			<textarea rows="6" style="width: 23em" id="desc" name="desc"></textarea>
 		</div>
-		<button id="b2" class="botao" type="submit">Cadastrar</button>
+		<button id="b2" class="botao" type="submit">Editar</button>
 	</form>
 </body>
 </html>

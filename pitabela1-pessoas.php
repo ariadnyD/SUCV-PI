@@ -1,5 +1,6 @@
 <?php
 include("config.php");
+include("verifica.php");
 $consulta = $conn->query("SELECT * from tb_pacientes");
 if(isset($_GET['pessoa'])){
 	$pessoa=$_GET['pessoa'];
@@ -99,6 +100,6 @@ if(isset($_GET['excluir'])){
 			    </tr>
 			</tbody>
  <?php }}?>
-		</table> </div>
+		</table><a href="inicialenfer.php">Pagina inicial enfermeiros</a></div>
 	</body>
 </html>
