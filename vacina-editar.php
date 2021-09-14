@@ -1,6 +1,8 @@
 <?php 
 include("config.php");
 $codigo = $_GET['codigo'];
+$consulta2 = $conn->query("SELECT * from tb_vacinas where vac_codigo = $codigo");
+$resultado2 = $consulta2->fetch_assoc();
 if(isset($_POST['nomevac'])){
 	extract($_POST);
 	if($inserir=$conn->query("UPDATE tb_vacinas set 
@@ -31,12 +33,12 @@ if(isset($_POST['nomevac'])){
 	<form id="vacinas" class="form" action="?codigo=<?php echo $codigo; ?>" method="POST">
 		<div class="camp">
 			<label>Nome</label>
-			<input id="nomev" type="text" name="nomevac" required>
+			<input id="nomev" type="text" name="nomevac" value="<?php echo $resultado2['vac_nome']; ?>" required>
 		</div>
 		<div class="camp">
 			<br>
 			<label for="desc">Descrição</label>
-			<textarea rows="6" style="width: 23em" id="desc" name="desc"></textarea>
+			<textarea rows="6" style="width: 23em" id="desc" name="desc"><?php echo $resultado2['vac_descricao']; ?></textarea>
 		</div>
 		<button id="b2" class="botao" type="submit">Editar</button>
 	</form>
