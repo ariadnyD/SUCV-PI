@@ -4,7 +4,7 @@ include("config.php");
 if (isset($_POST['nomevac'])) {
 	extract($_POST);
 	if ($inserir = $conn->query("insert into tb_vacinas (vac_nome, vac_descricao) values ('$nomevac', '$desc')")) {
-		header("Location:inicialenfer.html");
+		header("Location:inicialenfer.php");
 	} else {
 		echo "Não foi possivel cadastrar a vacina!";
 	}

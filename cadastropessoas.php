@@ -4,7 +4,7 @@ include("config.php");
 if (isset($_POST['nomec'])) {
 	extract($_POST);
 	if ($inserir = $conn->query("insert into tb_pacientes (pac_nome, pac_cartsus, pac_dtnasc) values ('$nomec', '$sus', '$nasc')")) {
-		header("Location:inicialenfer.html");
+		header("Location:inicialenfer.php");
 	} else {
 		echo "Não foi possivel cadastrar a pessoa!";
 	}
