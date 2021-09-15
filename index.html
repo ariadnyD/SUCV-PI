@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <title>SUCV</title>
+
     <link rel="stylesheet" href="css/index.css">
     
     <!--fontes do body-->
@@ -18,90 +19,88 @@
     <!--link icon da guia-->
     <link rel="icon" sizes="57x57" href="assets/logo/icon.png">  
 
+    <!--biblioteca js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
+<body>
+    <header>
+        <nav id = "nav-bar">
+            <img id = "icon-logo" src="assets/logo/logo.png" alt="Logo do site: uma injenção caindo uma gota">
+            <div class = "logo">SUCV</div>
+            
+            <div class="bar">
+                <a href="#home">HOME</a>
+                <a href="#about">SOBRE</a>
+                <a href="#contact">CONTATO</a>
+                <a class="login" href="login.php">LOGIN</a>
+            </div>
 
-    <body> 
-        <header id = "header">
-            <title>SUCV</title>
-            <nav class="nav-bar"> <!--NAVEGAÇÃO DA HEADER-->
-                <img id = "icon-logo" src="assets/logo/logo.png" alt="Logo do site: uma injenção caindo uma gota">
-                <a href="#home" class="logo">SUCV</a>
-                <div class="menu">
-                    <ul>
-                        <li><a class="title" href="#home">HOME</a></li>
-                        <li><a class="title" href="#about">SOBRE</a></li>
-                        <li><a class="title" href="#contact">CONTATO</a></li>
-                        <li><a class = "button" href="login.php">LOGIN</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        </nav>
+    </header>
 
-        <main>
-            <section class = "section" id="home">
-                <div class="container">
-                    <div class="text">
-                        <h1>Olá! <br> Seja bem-vindo ao SUCV!</h1>
-                    </div>
+    <main data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500">
+        <section id="home" class="container">
+            <div class="home-text">
+                <h1 data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="3000">Olá, seja bem vindo!</h1>
+            </div>
 
-                <div class="image">
-                    <img src="assets/body/imagem1.png" alt="Foto de uma senhora se vacinando.">
-                </div>
-
-                <form class="search" method="GET" action="pitabela2-cartao.php">
-                    <input type="text" class="bText" placeholder="Inserir nº do cartão do SUS">
-                    <button class="search-btn">
+            <div class="form">
+                <form class="search" method="POST" action="pitabela2-cartao.php" autocomplete="off">
+                    <input type="text" class="bText" name="cartao" placeholder="Inserir nº do cartão do SUS">
+                    <button type="submit" class="search-btn">
                         <img src="assets/body/search.svg" alt="Lupa de busca" height="25" width="25">
                     </button>
                 </form>
             </div>
-            </section>
 
-            <div class="divider-1"></div> 
+            <div class="image-box">
+                <img src="assets/body/imagem1.png" alt="Enfermeira aplicando vacina.">
+            </div>
+        </section>
 
-            <section class="section" id="about">
-                <div class = "container">
+        <div class="divider-1"></div> 
 
-                    <div class="box-text">
-                        <h1>SOBRE O SITE</h1>
-                        <p>O <strong>Sistema Unificado de Vacinação (SUCV)</strong> trata-se de um projeto escolar de quatro alunas pertecentes ao Instituto
-                        Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte - Campus Caicó (IFRN-CA), e tem como objetivo facilitar e melhorar o acesso à aplicação de vacinas nas unidades básicas de saúde através da sistematização destas. 
-                        A ideia surgiu ao observar problemas recorrentes na cidade na qual moramos, tais como perda do cartão de vacina, pois por se tratar de um documento frágil, pode ser facilmente danificado; e a falta de dados salvos da população nos postos de saúde dos bairros que pudessem suprir essa perda momentaneamente. A partir disso, o <strong>SUCV</strong> foi colocado em prática.</p>
-                        </p>
-
-                        <h2>DESENVOLVEDORAS</h2>
-                    </div>
-
-                    <div class ="dev-image">
-                        <div class="n">
-                            <img src="assets/dev/nat.jpg" alt="Foto da desenvolvedora Natalia">
-                        </div>
-                        <div class="e">
-                            <img src="assets/dev/elo.jpg" alt="Foto da desenvolvedora Eloisa">
-                        </div>
-                        <div class="b">
-                            <img src="assets/dev/bia.jpg" alt="Foto da desenvolvedora Beatriz">
-                        </div>
-                        <div class="a">
-                            <img src="assets/dev/ari.jpg" alt="Foto da desenvolvedora Ariadny">
-                        </div>
-                    </div>
+        <section class="section" id="about" data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
+            <div class = "container">
+                <div class="about-text">
+                    <h1>Sobre o site</h1>
+                    <p>O <strong>Sistema Unificado de Vacinação (SUCV)</strong> trata-se de um projeto escolar de quatro alunas pertecentes ao Instituto
+                    Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte - Campus Caicó (IFRN-CA), e tem como objetivo facilitar e melhorar o acesso à aplicação de vacinas nas unidades básicas de saúde através da sistematização destas. 
+                    A ideia surgiu ao observar problemas recorrentes na cidade na qual moramos, tais como perda do cartão de vacina, pois por se tratar de um documento frágil, pode ser facilmente danificado; e a falta de dados salvos da população nos postos de saúde dos bairros que pudessem suprir essa perda momentaneamente. A partir disso, o <strong>SUCV</strong> foi colocado em prática.</p>
                 </div>
-            </section>
-        </main>
-        
-        <!--ScrollReveal-->
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <!--main js-->
-        <script src="js/main.js"></script>
-    </body>
 
-    <footer class = "section" id = "contact">
-        <div class="information">
-            <h2>CONTATO</h2>
-            <p>Email: sucv@rn.gov.br</p>
-            <p>Telefone: (84) 4002-8922</p>
-            <p>©2021 SUCV</p>
-        </div>
-    </footer>
+                <h2>Desenvolvedoras</h2>
+
+                <div class ="dev-image">
+                    <img class = "dev1" src="assets/dev/nat.jpg" alt="Foto da desenvolvedora Natalia">
+                    <img class = "dev1" src="assets/dev/elo.jpg" alt="Foto da desenvolvedora Eloisa">
+                    <img class = "dev2" src="assets/dev/bia.jpg" alt="Foto da desenvolvedora Beatriz">
+                    <img class = "dev1" src="assets/dev/ari.jpg" alt="Foto da desenvolvedora Ariadny">
+                </div>
+            </div>
+        </section>
+    </main> 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+<footer id="contact">
+    <div class="information">
+        <h2>CONTATO</h2>
+        <p>Email: sucv@rn.gov.br</p>
+        <p>Telefone: (84) 4002-8922</p>
+        <p>©2021 SUCV</p>
+    </div>
+</footer>
 </html>

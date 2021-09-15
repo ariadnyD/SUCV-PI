@@ -1,38 +1,37 @@
 * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
-/*************VARIAVEIS***************/
-:root {
+
+:root{
+    /*divider*/
     --hue: 170;
     --base-color:#66B3AB;
     --base-color-second:rgb(23, 95, 92);
 
     /*cores*/
     --text-color: black;
+    --background: #F7F7E8;
 
+    /*fontes*/
     --title-font: 'Noto serif', sans-serif;
     --body-font: 'Noto serif', sans-serif;
     --logo: 'Mitr', sans-serif;
-  }
-/*----------------------HEADER-------------------------------*/
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    font: 500 1rem var(--body-font);
-    
-    color:var(--text-color) ;
+    background-color: lightyellow;
+    font: var(--body-font);
     overflow-x: hidden;
-    background-color: #F7F7E8;
-    width: 100%;
-    -webkit-font-smoothing: antialiased;
 }
 
-#header{
+/*------------------------HEADER----------------------------*/
+
+header {
     width: 100%;
     background-color: #66B3AB;
     height: 7rem;
@@ -41,101 +40,90 @@ body {
     border-bottom: 1px solid rgb(164, 197, 197);
     margin-bottom: 2rem;  
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    z-index: 100;
 }
 
-#icon-logo{
-    width: 4.5rem;
-    height: 4.5rem;
-    padding-top: 1.3rem;
-    margin-left: 0.5rem;
+#nav-bar{
+    display: flex;
 }
 
-.logo {
-    font: 500 2.5rem var(--logo) ;
-    font-size: 3rem;
+#nav-bar img {
+    position: relative;
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: 1rem;
+}
+
+.logo{
+    position: absolute;
+    left: 8%;
+    font: 500 3rem var(--logo);
     color: whitesmoke;
     padding-top: 1rem;
     margin-right: 6.5rem;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between; /*justificar conteudo*/
-    width: 100%;
+.bar {
+    position: relative;
+    top: 2rem;
+    left: 42%;
+    font: 700 1.85rem var(--body-font) ;
 }
 
-nav ul li{
-    display: inline-block;
-    padding-left: 5rem;
-    align-content: space-between;
-}
-
-nav ul li a{
+.bar a {
     color: whitesmoke;
-    font: 700 1.7rem var(--body-font) ;
-    -webkit-font-smoothing: auto;
+    padding: 1.5rem;
 }
 
-nav ul li a:hover{
+.bar .login {
+    color:rgba(61, 139, 136, 0.658);
+}
+
+.bar a:hover{
     color: rgb(23, 95, 92);
-    transition: color 0.5s;
+    transition: color 1s;
 }
 
-nav .menu {
-    margin-left: 15rem;
-    padding-right: 1.5rem;
-    padding-top: 2.2rem;
-}
-
-.button{
-    color: #A6BFBC;
-    margin-right: 2rem;
-} 
+/*----------------------HOME-----------------------*/
 
 .container {
-    margin-right: 2.5rem;
-    margin-left: 2.5rem;
+    margin: 3rem;
+    height: 32.8rem;
 }
 
-.section {
-    padding: 8rem 0;
+#home .home-text{
+    padding-top: 8rem;
+    font-size: 1.5rem;
 }
 
-#home .container{
-    margin-bottom: 8rem;
-}
-
-#home .text h1{
-    margin-top: 2rem;
-    margin-bottom: -6rem;
-    font-size: 2.4rem;
+.form {
+    position: relative;
+    top: 50%;
 }
 
 .search{
 	position: absolute;
-	top:75%;
-    left: 22%;
 	transform: translate(-50%, -50%);
 	background: #66B3AB;
-	height: 1rem;
+	height: 2.5rem;
     width: 32rem;
 	padding: 1rem 0 1rem 0;
 	border-radius: 4rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+    z-index: 0;
 }
 
 .bText{
 	border: none;
 	background: none;
 	outline: none;
+    width: 30rem;
 	color: #f0f5fb;
     padding: 1rem;
 	font-size: 1.1rem;
-	line-height: 4rem;
     font: 400 1rem var(--body-font);
-    width: 450px;
 }
 
 ::-webkit-input-placeholder{
@@ -143,8 +131,8 @@ nav .menu {
 }
 
 .search-btn{
-	width: 3rem;
-	height: 3rem;
+	width: 2.5rem;
+	height: 2.5rem;
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
@@ -157,171 +145,196 @@ nav .menu {
     background-color: darkcyan;
 }
 
-.image img {
-    width: 26.5rem;
-    height: 18rem;
-    padding: 4rem 1rem 0 55rem;
+.image-box {
+    position: relative;
+    left: 70%;
+}
+
+.image-box img {
+    width: 25rem;
 }
 
 .divider-1{
-    height: 2px;
+    height: 2.5px;
     background: linear-gradient(
     270deg, 
     hsla(var(--hue), 36%, 57%, 1) 5%, 
     hsla(var(--hue), 65%, 88%, 0.34) 100%);
     width: 100%;
-    margin: 0;
 }
 
-#about .box-text h1{
-    text-align: center;
-    margin-bottom: 2rem;
-}
+/*---------------------------ABOUT-----------------------------*/
 
-#about .box-text p{
+.container {
+    font-family: var(--body-font);
+}
+.about-text {
     text-align: justify;
-    font: 500 1.3rem var(--body-font);
-    text-indent: 50px;
+    font: 500 1.2rem var(--body-font);
 }
 
-.box-text h2{
+#about h1, h2 {
     text-align: center;
-    margin-top: 4rem;
+    padding: 1.5rem;
 }
 
-#about .dev-image{
-    display: flex;
-}
-
-.n img, .e img, .a img, .b img{
-    border-radius: 12px;
-    margin-top: 4rem;
-    margin-left: 8rem;
-    width: 10.8rem;
-    height: 12.5rem;
+.dev-image {
     display: inline-block;
+    padding-left: 3rem;
 }
 
-.b img {
-    width: 12rem;
-    height: 12.4rem;
+.dev1{
+    width: 12.5rem;
+    height: 14rem;
+    margin-left: 4rem;
+    border-radius: 12px;
 }
 
-footer{
-    background-color: #66B3AB;
-    color: whitesmoke;
-    margin: 0;
-    height: 12px;
+.dev2{
+    width: 14rem;
+    height: 14rem;
+    margin-left: 4rem;
+    border-radius: 12px;
 }
 
-#contact .information{
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+/*---------------------FOOTER-------------------*/
+
+footer {
+    margin-top: 8rem;
+    width: 100%;
+    height: 12rem;
+    background: #66B3AB;
+    display: flex;
+    font: 500 0 var(--body-font);
+    color: white;
 }
 
 .information h2 {
-    font-size: 1.95rem;
-    transform: translateY(-2rem);
+    text-align: left;
+    font-size: 2rem;
 }
 
 .information p{
-    transform: translateY(-1rem);
-    font-size: 1.3rem;
-    padding-right: 10rem;
+    font-size: 1.89rem;
+    padding-top: 1rem;
+    margin-left: 1.5rem;
+    padding-right: 8rem;
     display: inline-block;
 }
 
-/******RESPONSIVO******/
-
-@media (min-width: 2560px ) { /*monitor ultra wide*/
-    
-    .nav-bar {
-        margin-left: 25rem;
-    }
-
-    .menu {
-        margin-right: 60rem;
-    }
-
+@media (min-width: 2560px) {
     .container {
-        margin: 1rem 26rem;
+        margin-left: 20rem;
+        margin-right: 20rem;
+        height: 61rem;
     }
 
-    #icon-logo {
-        width: 5.5rem;
-        height: 5.5rem;
+    header {
+        height: 8rem;
     }
 
-    .logo {
-        font-size: 4rem;
-        padding-top: 0.7rem;
+    #nav-bar img {
+        position: relative;
+        left: 8%;
+        width: 7rem;
+        height: 6.5rem;
     }
 
-    nav ul li a{
-        font-size: 2.5rem;
+    .logo{
+        position: absolute;
+        left: 12%;
+        top: -1rem;
+        font: 500 5rem var(--logo);
     }
 
-    #home .text h1{
-        font-size: 3rem;
+    .bar {
+        position: relative;
+        top: 2rem;
+        left: 31%;
+        font: 700 2.5rem var(--body-font) ;
     }
 
-    #home .image img {
-        width: 35rem;
-        height: 25rem;
-        margin-left: 8rem;
+    .bar a {
+        padding: 3rem
     }
 
-    .search {
-        top: 55%;
-        left: 29%;
-        height: 2rem;
+    #home .home-text{
+        padding-top: 10rem;
+        font-size: 2rem;
+    }
+
+    .form {
+        top: 45%;
+    }
+
+    .search{
+        position: absolute;
+        left: 23%;
+        height: 4rem;
+        width: 55rem;
+    }
+
+    .bText{
+        font-size: 1.8rem;
+    }
+
+    .search-btn{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .search-btn img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .image-box img {
         width: 40rem;
     }
+
+    .about-text {
+        text-align: justify;
+        font: 500 2.5rem var(--body-font);
+    }
     
-    .bText{
-        padding: 1.5rem;
-        font-size: 1.5rem;
-    }
-    
-    .search-btn img{
-        width: 38px;
-        height: 40px;
-        padding-right: 1rem;
+    #about h1, h2 {
+        text-align: center;
+        padding: 2.5rem;
     }
 
-    #about {
-        margin-right: 6rem;
-    }
-
-    #about .box-text p, h2{
-        font-size: 2.2rem;
-    }
-
-    #about .box-text h1 {
+    #about h2{
         font-size: 2.5rem;
     }
+    
+    .dev-image {
+        padding-left: 5rem;
+    }
 
-    .n img, .e img, .a img, .b img{
-        width: 16.8rem;
-        height: 18.5rem;
-        margin-left: 6rem;
+    .dev1{
+        width: 18.5rem;
+        height: 20rem;
+        margin-left: 8rem;
     }
     
-    .b img {
-        width: 18rem;
-        height: 18.4rem;
+    .dev2{
+        width: 20rem;
+        height: 20rem;
+        margin-left: 8rem;
     }
     
-    #contact .information {
-        margin-left: 25rem;
+    footer {
+        margin-top: 15rem;
+        padding-left: 15rem;
+        width: 230rem;
+        height: 18rem;
     }
-
-    #contact .information p{
-        font-size: 2.2rem;
+    
+    .information h2 {
+        font-size: 3rem;
     }
-
-    #contact .information h2{
-        font-size: 2.4rem;
+    
+    .information p{
+        font-size: 2.5rem;
+        margin-left: 2.5rem;
     }
-
 }
