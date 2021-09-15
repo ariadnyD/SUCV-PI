@@ -1,18 +1,20 @@
-<?php 
+<?php
+include("verifica.php");
 include("config.php");
 $consulta = $conn->query("select * from tb_vacinas");
 $consulta2 = $conn->query("select * from tb_enfermeiros");
-if(isset($_POST['codp'])){
+if (isset($_POST['codp'])) {
 	extract($_POST);
-	if($inserir=$conn->query("insert into tb_vacinacao (van_pac_codigo, van_vac_codigo, van_enf_codigo, van_dose, van_lote, van_ubs, van_data) values ('$codp', '$codv','$code', '$dose', '$lote', '$ubs', '$data')")){
+	if ($inserir = $conn->query("insert into tb_vacinacao (van_pac_codigo, van_vac_codigo, van_enf_codigo, van_dose, van_lote, van_ubs, van_data) values ('$codp', '$codv','$code', '$dose', '$lote', '$ubs', '$data')")) {
 		header("Location:inicialenfer.php");
-	}else{
+	} else {
 		echo "Não foi possivel cadastrar a vacinação!";
 	}
 }
 ?>
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
 	<meta charset="utf-8">
 	<title>Cadastro de Vacinação</title>
@@ -20,6 +22,7 @@ if(isset($_POST['codp'])){
 	<link rel="stylesheet" type="text/css" href="css/cadastros.css">
 	<link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 </head>
+
 <body>
 	<div class="titulo">
 		<h1 id="titulo">Cadastro de Vacinação</h1>
@@ -34,7 +37,7 @@ if(isset($_POST['codp'])){
 		<div class="camp">
 			<label>Vacina</label>
 			<select id="codv" name="codv" required>
-				<?php while ($resultado= $consulta->fetch_assoc()) { ?>
+				<?php while ($resultado = $consulta->fetch_assoc()) { ?>
 					<option value="<?php echo $resultado['vac_codigo']; ?>"><?php echo $resultado['vac_nome']; ?></option>
 				<?php } ?>
 			</select>
@@ -54,9 +57,9 @@ if(isset($_POST['codp'])){
 		<div class="camp">
 			<label>Enfermeiro</label required>
 			<select id="code" name="code" required>
-				<?php while ($resultado1= $consulta2->fetch_assoc()) { ?>
+				<?php while ($resultado1 = $consulta2->fetch_assoc()) { ?>
 					<option value="<?php echo $resultado1['enf_codigo']; ?>"><?php echo $resultado1['enf_nome']; ?></option>
-						<?php } ?>
+				<?php } ?>
 			</select>
 		</div>
 		<div class="camp">
@@ -66,4 +69,5 @@ if(isset($_POST['codp'])){
 		<button id="b3" class="botao" type="submit">Cadastrar</button>
 	</form>
 </body>
+
 </html>

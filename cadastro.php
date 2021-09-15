@@ -7,7 +7,7 @@ if ($_POST) {
   if ($senha == $senhac) {
     if (isset($_POST['nome'])) {
       extract($_POST);
-      if ($inserir = $conn->query("insert into tb_enfermeiros (enf_nome, enf_email,enf_senha) values ('$nome', '$email', '$senha')")) {
+      if ($inserir = $conn->query("insert into tb_enfermeiros (enf_nome, enf_email,enf_senha) values ('$nome', '$email', '" . md5($senha) . "')")) {
         header("Location:login.php");
       } else {
         echo "Não foi possivel realizar o cadastro!";

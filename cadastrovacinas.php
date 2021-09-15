@@ -1,16 +1,18 @@
-<?php 
+<?php
+include("verifica.php");
 include("config.php");
-if(isset($_POST['nomevac'])){
+if (isset($_POST['nomevac'])) {
 	extract($_POST);
-	if($inserir=$conn->query("insert into tb_vacinas (vac_nome, vac_descricao) values ('$nomevac', '$desc')")){
+	if ($inserir = $conn->query("insert into tb_vacinas (vac_nome, vac_descricao) values ('$nomevac', '$desc')")) {
 		header("Location:inicialenfer.html");
-	}else{
+	} else {
 		echo "Não foi possivel cadastrar a vacina!";
 	}
 }
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>Cadastro de Vacinas</title>
@@ -18,6 +20,7 @@ if(isset($_POST['nomevac'])){
 	<link rel="stylesheet" type="text/css" href="css/cadastros.css">
 	<link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 </head>
+
 <body>
 	<div class="titulo">
 		<h1 id="titulo">Cadastro de Vacinas</h1>
@@ -37,4 +40,5 @@ if(isset($_POST['nomevac'])){
 		<button id="b2" class="botao" type="submit">Cadastrar</button>
 	</form>
 </body>
+
 </html>

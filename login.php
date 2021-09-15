@@ -4,11 +4,11 @@ session_start();
 $erro = 0;
 if (isset($_POST['email'])) {
   extract($_POST);
-  $consulta = $conn->query("select * from tb_enfermeiros where enf_email  = '$email' and enf_senha = '$senha'");
+  $consulta = $conn->query("select * from tb_enfermeiros where enf_email  = '$email' and enf_senha = '" . md5($senha) . "'");
   if ($resultado = $consulta->fetch_assoc()) {
     $_SESSION['email'] = $resultado['enf_email'];
     $_SESSION['senha'] = $resultado['enf_senha'];
-    header("Location: inicialenfer.html");
+    header("Location: inicialenfer.php");
   } else {
     $erro = 1;
   }

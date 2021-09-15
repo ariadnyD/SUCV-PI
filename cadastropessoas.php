@@ -1,16 +1,18 @@
-<?php 
+<?php
+include("verifica.php");
 include("config.php");
-if(isset($_POST['nomec'])){
+if (isset($_POST['nomec'])) {
 	extract($_POST);
-	if($inserir=$conn->query("insert into tb_pacientes (pac_nome, pac_cartsus, pac_dtnasc) values ('$nomec', '$sus', '$nasc')")){
+	if ($inserir = $conn->query("insert into tb_pacientes (pac_nome, pac_cartsus, pac_dtnasc) values ('$nomec', '$sus', '$nasc')")) {
 		header("Location:inicialenfer.html");
-	}else{
+	} else {
 		echo "Não foi possivel cadastrar a pessoa!";
 	}
 }
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>Cadastro das Pessoas</title>
@@ -18,6 +20,7 @@ if(isset($_POST['nomec'])){
 	<link rel="stylesheet" type="text/css" href="css/cadastros.css">
 	<link rel="icon" sizes="57x57" href="assets/logo/icon.png">
 </head>
+
 <body>
 	<div class="titulo">
 		<h1 id="titulo">Cadastro de Pessoas</h1>
@@ -40,4 +43,5 @@ if(isset($_POST['nomec'])){
 		<button id="b1" class="botao" type="submit">Cadastrar</button>
 	</form>
 </body>
+
 </html>
