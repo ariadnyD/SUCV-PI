@@ -57,7 +57,11 @@ if(isset($_GET['excluir'])){
 				    <td> NOME </td>
 				    <td> CARTÃO DO SUS </td>
 				    <td> DATA DE NASCIMENTO </td> 
+				<?php 
+				@session_start();
+				if(isset($_SESSION['email'])){ ?>
 				    <td> </td>
+				<?php } ?>
 			    </tr>
 			</thead>
 <?php if(isset($_POST['pessoa'])){
@@ -68,7 +72,8 @@ if(isset($_GET['excluir'])){
 			<tbody>
 			    <tr> 
 			        <td> <?php echo $resultado2['pac_codigo']; ?></td>
-				    <td id="cartao" onclick="location.href = 'pitabela2-cartao.php?codigo= <?php echo $resultado2['pac_codigo'];?>';"style="cursor: hand;" > <?php echo $resultado2['pac_nome']; ?> </td>
+				    <td id="cartao"style="cursor: hand;" > 
+				    	<a href="pitabela2-cartao.php?codigo= <?php echo $resultado2['pac_codigo'];?>"><?php echo $resultado2['pac_nome']; ?></a></td>
 				    <td> <?php echo $resultado2['pac_cartsus']; ?> </td>
 				    <td> <?php echo $resultado2['pac_dtnasc']; ?> </td>
 				    <td><a href="pacientes-editar.php?codigo=<?php echo $resultado2['pac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a>&nbsp;
@@ -82,14 +87,19 @@ if(isset($_GET['excluir'])){
 			<tbody>
 			    <tr> 
 			        <td> <?php echo $resultado['pac_codigo']; ?></td>
-				    <td id="cartao" onclick="location.href = 'pitabela2-cartao.php?codigo= <?php echo $resultado['pac_codigo'];?>';"style="cursor: hand;" > <?php echo $resultado['pac_nome']; ?> </td>
+			        <td id="cartao"style="cursor: hand;" > 
+				    	<a href="pitabela2-cartao.php?codigo= <?php echo $resultado['pac_codigo'];?>"><?php echo $resultado['pac_nome']; ?></a></td>
 				    <td> <?php echo $resultado['pac_cartsus']; ?> </td>
 				    <td> <?php echo $resultado['pac_dtnasc']; ?> </td>
+				<?php 
+				@session_start();
+				if(isset($_SESSION['email'])){ ?>
 				    <td>&nbsp;<a href="pacientes-editar.php?codigo=<?php echo $resultado['pac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a> 
 				    <a href="?excluir=<?php echo $resultado['pac_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a></td>
+				<?php } ?>
 			    </tr>
 			</tbody>
  <?php }}?>
-		</table> </div>
+		</table><a href="inicialenfer.php">Pagina inicial enfermeiros</a></div>
 	</body>
 </html>

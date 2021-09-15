@@ -1,3 +1,6 @@
+<?php 
+include("verifica.php");
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -22,7 +25,7 @@
 		<div class="menu">
 			<a class="title" href="pitabela1-pessoas.php">PESSOAS CADASTRADAS</a>
 			<a class="title" href="pitabela3-vacinas.php">VACINAS CADASTRADAS</a>
-			<a class="title sair" href="index.html">SAIR</a>
+			<a class="title sair" href="sair.php">SAIR</a>
 		</div>
 	</header>
 	<form class="search-box" id=p1 method="GET" action="pitabela1-pessoas.php">

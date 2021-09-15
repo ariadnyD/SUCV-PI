@@ -90,6 +90,12 @@ td{
 h3{
 	margin-left: 5px;
 }
+#cartao{
+	text-decoration: none;
+}
+#vacina{
+	text-decoration: none;
+}
 #cartao:hover {
 	text-decoration: underline;
 	background-color: #9DE3A8;

@@ -5,7 +5,7 @@ $consulta2 = $conn->query("select * from tb_enfermeiros");
 if(isset($_POST['codp'])){
 	extract($_POST);
 	if($inserir=$conn->query("insert into tb_vacinacao (van_pac_codigo, van_vac_codigo, van_enf_codigo, van_dose, van_lote, van_ubs, van_data) values ('$codp', '$codv','$code', '$dose', '$lote', '$ubs', '$data')")){
-		header("Location:inicialenfer.html");
+		header("Location:inicialenfer.php");
 	}else{
 		echo "Não foi possivel cadastrar a vacinação!";
 	}
@@ -34,7 +34,6 @@ if(isset($_POST['codp'])){
 		<div class="camp">
 			<label>Vacina</label>
 			<select id="codv" name="codv" required>
-				<option value="" selected disabled hidden>Selecione aqui</option>
 				<?php while ($resultado= $consulta->fetch_assoc()) { ?>
 					<option value="<?php echo $resultado['vac_codigo']; ?>"><?php echo $resultado['vac_nome']; ?></option>
 				<?php } ?>
@@ -55,7 +54,6 @@ if(isset($_POST['codp'])){
 		<div class="camp">
 			<label>Enfermeiro</label required>
 			<select id="code" name="code" required>
-				<option value="" selected disabled hidden>Selecione aqui</option>
 				<?php while ($resultado1= $consulta2->fetch_assoc()) { ?>
 					<option value="<?php echo $resultado1['enf_codigo']; ?>"><?php echo $resultado1['enf_nome']; ?></option>
 						<?php } ?>

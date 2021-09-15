@@ -13,6 +13,14 @@ if(isset($_GET['vacina'])){
 		echo "Não foi possivel encontrar nada!";
 	}
 }
+if(isset($_GET['excluir'])){
+	$excluir = $_GET['excluir'];
+	if($consulta= $conn->query("DELETE from tb_vacinas where vac_codigo = $excluir")){
+		header("Location: pitabela3-vacinas.php");
+	} else {
+		header("Location: pitabela3-vacinas.php");
+	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,6 +59,10 @@ if(isset($_GET['vacina'])){
 				    <td> # </td>
 				    <td> NOME </td>
 				    <td> DESCRIÇÃO </td>
+				    <?php @session_start();
+				    if(isset($_SESSION['email'])){ ?>
+				    <td> </td>
+				<?php }?>
 			    </tr>
 			</thead>
 <?php if(isset($_POST['vac'])){
@@ -63,6 +75,12 @@ if(isset($_GET['vacina'])){
 			        <td><?php echo $resultado2['vac_codigo'];?></td>
 				    <td><?php echo $resultado2['vac_nome'];?></td>
 				    <td><?php echo $resultado2['vac_descricao'];?></td>
+				    <?php 
+				    @session_start();
+				    if(isset($_SESSION['email'])){ ?>
+				    <td><a href="vacina-editar.php?codigo=<?php echo $resultado2['vac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a>&nbsp;
+				    <a href="?excluir=<?php echo $resultado2['vac_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a></td>
+				<?php } ?>
 			    </tr>
 			</tbody>
 <?php }else {
@@ -74,9 +92,17 @@ if(isset($_GET['vacina'])){
 			        <td><?php echo $resultado['vac_codigo'];?></td>
 				    <td><?php echo $resultado['vac_nome'];?></td>
 				    <td><?php echo $resultado['vac_descricao'];?></td>
+				    <?php 
+				    @session_start();
+				    if(isset($_SESSION['email'])){ ?>
+				    <td><a href="vacina-editar.php?codigo=<?php echo $resultado['vac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a>&nbsp;
+				    <a href="?excluir=<?php echo $resultado['vac_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a></td>
+				<?php } ?>
 			    </tr>
 			</tbody>
 <?php }}?>
-		</table></div>
+		</table><?php @session_start();
+		if(isset($_SESSION['email'])){ ?><a href="inicialenfer.php">Pagina inicial enfermeiros</a>
+	<?php }?></div>
 	</body>
 </html>
