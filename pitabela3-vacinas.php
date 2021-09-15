@@ -1,5 +1,4 @@
 <?php
-include("verifica.php");
 include("config.php");
 $consulta = $conn->query("SELECT * from tb_vacinas");
 if (isset($_GET['codigo'])) {
