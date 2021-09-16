@@ -56,7 +56,7 @@ header {
 
 .logo{
     position: absolute;
-    left: 6%;
+    left: 7%;
     font: 500 3rem var(--logo);
     color: whitesmoke;
     padding-top: 1rem;
@@ -103,7 +103,7 @@ header {
 
 .search{
 	position: absolute;
-    left: 18%;
+    left: 20%;
 	transform: translate(-50%, -50%);
 	background: #66B3AB;
 	height: 2.5rem;
@@ -182,7 +182,7 @@ header {
 
 .dev-image {
     display: inline-block;
-    padding-left: 8rem;
+    padding-left: 3rem;
 }
 
 .dev1{
