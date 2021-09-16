@@ -66,7 +66,7 @@ if(isset($_GET['excluir'])){
 			</thead>
 <?php if(isset($_POST['pessoa'])){
       $search = $_POST['pessoa'];
-      if($consulta2 = $conn->query("SELECT * from tb_pacientes where pac_cartsus like '%$search%'")){
+      if($consulta2 = $conn->query("SELECT * from tb_pacientes where pac_cartsus like '%$search%' or pac_nome like '%$search%'")){
         $resultado2 = $consulta2->fetch_assoc();
       ?>
 			<tbody>
