@@ -49,6 +49,7 @@ header {
 
 #nav-bar img {
     position: relative;
+    left: 2%;
     width: 4.5rem;
     height: 4.5rem;
     margin: 1.2rem;
@@ -56,7 +57,7 @@ header {
 
 .logo{
     position: absolute;
-    left: 7%;
+    left: 9%;
     font: 500 3rem var(--logo);
     color: whitesmoke;
     padding-top: 1rem;
