@@ -48,16 +48,20 @@ if(isset($_GET['excluir'])){
 					<p>SUCV</p>
 				</div>
 			</div>
+		<?php @session_start();
+		if (isset($_SESSION['email'])) { ?>
+			<div class="menu">
+				<a class="title" href="inicialenfer.php">HOME ENFERMEIRO</a>
+			</div>
+		<?php } ?>
 		</header>
 		<br>
 		<div class="inferior"><h3> Cartão de Vacina: </h3>
 	    <table border="1" class="tabelas">
 			<thead>
 		    	<tr>
-		    		<?php 
-		    		@session_start();
-		    		if(isset($_SESSION['email'])){ ?>
-		    		<th colspan="7"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
+		    	<?php if(empty($resultado2)){  	 ?>
+		    		<th colspan="7"> Paciente não encontrado </th>
 		    	<?php } else{ ?>
 		    		<th colspan="6"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
 		    	<?php }?>
@@ -71,7 +75,7 @@ if(isset($_GET['excluir'])){
 				    <?php 
 				    @session_start();
 				    if(isset($_SESSION['email'])){ ?>
-				    <td>  </td>
+				    <td> </td>
 				    <?php }?>
 			    </tr>
 			</thead>
@@ -94,8 +98,7 @@ if(isset($_GET['excluir'])){
 			    </tr>
 			</tbody>
 		<?php } ?>
-		</table><?php @session_start();
-		if(isset($_SESSION['email'])){ ?><a href="inicialenfer.php">Pagina inicial enfermeiros</a>
-	<?php }?></div>
-	</body>
+		</table>
+	</div>
+</body>
 </html>

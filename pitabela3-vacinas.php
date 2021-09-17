@@ -47,10 +47,16 @@ if (isset($_GET['excluir'])) {
 				<p>SUCV</p>
 			</div>
 		</div>
+	<?php @session_start();
+	if (isset($_SESSION['email'])) { ?>
+		<div class="menu">
+			<a class="title" href="inicialenfer.php">HOME ENFERMEIRO</a>
+		</div>
+	<?php } ?>
 	</header>
 	<div class="inferior">
-		<form class="search-box" id=p1 method="POST" action="#">
-			<input type="text" name="vac" class="search-txt" placeholder="Pesquisa de vacina">
+		<form class="search-box" id=p1 method="GET" action="#">
+			<input type="text" name="vacina" class="search-txt" placeholder="Pesquisa de vacina">
 			<button class="search-btn">
 				<img src="assets/306102.svg" alt="lupa" height="20" width="20">
 			</button>
@@ -68,49 +74,21 @@ if (isset($_GET['excluir'])) {
 					<?php } ?>
 				</tr>
 			</thead>
-			<?php if (isset($_POST['vac'])) {
-				$searchv = $_POST['vac'];
-				if ($consulta2 = $conn->query("SELECT * from tb_vacinas where vac_nome like '%$searchv%'")) {
-					$resultado2 = $consulta2->fetch_assoc();
-			?>
-					<tbody>
-						<tr>
-							<td><?php echo $resultado2['vac_codigo']; ?></td>
-							<td><?php echo $resultado2['vac_nome']; ?></td>
-							<td><?php echo $resultado2['vac_descricao']; ?></td>
-							<?php
-							@session_start();
-							if (isset($_SESSION['email'])) { ?>
-								<td><a href="vacina-editar.php?codigo=<?php echo $resultado2['vac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a>&nbsp;
-									<a href="?excluir=<?php echo $resultado2['vac_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a>
-								</td>
-							<?php } ?>
-						</tr>
-					</tbody>
-				<?php } else {
-					echo "Vacina não encontrada!";
-				}
-			} else {
-				while ($resultado = $consulta->fetch_assoc()) { ?>
-					<tbody>
-						<tr>
-							<td><?php echo $resultado['vac_codigo']; ?></td>
-							<td><?php echo $resultado['vac_nome']; ?></td>
-							<td><?php echo $resultado['vac_descricao']; ?></td>
-							<?php
-							@session_start();
-							if (isset($_SESSION['email'])) { ?>
-								<td><a href="vacina-editar.php?codigo=<?php echo $resultado['vac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a>&nbsp;
-									<a href="?excluir=<?php echo $resultado['vac_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a>
-								</td>
-							<?php } ?>
-						</tr>
-					</tbody>
-			<?php }
-			} ?>
-		</table><?php @session_start();
-						if (isset($_SESSION['email'])) { ?><a href="inicialenfer.php">Pagina inicial enfermeiros</a>
+		<?php while ($resultado = $consulta->fetch_assoc()) { ?>
+			<tbody>
+				<tr>
+					<td><?php echo $resultado['vac_codigo']; ?></td>
+					<td><?php echo $resultado['vac_nome']; ?></td>
+					<td><?php echo $resultado['vac_descricao']; ?></td>
+				<?php
+				@session_start();
+				if (isset($_SESSION['email'])) { ?>
+					<td><a href="vacina-editar.php?codigo=<?php echo $resultado['vac_codigo']; ?>"><img src="assets/body/editar.png" width="16"></a>&nbsp;<a href="?excluir=<?php echo $resultado['vac_codigo']; ?>" onclick="return confirm('Tem certeza?')"><img src="assets/body/excluir.png" width="16"></a></td>
+				<?php } ?>
+				</tr>
+			</tbody>
 		<?php } ?>
+		</table>
 	</div>
 </body>
 

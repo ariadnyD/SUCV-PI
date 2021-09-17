@@ -12,7 +12,18 @@ header{
 	background-color: #66B3A8;
 	color: white;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
+}
+.title{
+	text-decoration: none;
+	color: whitesmoke;
+	font: 700 1.7rem 'Noto Serif';
+    margin-right: 2rem;
+}
+.title:hover{
+    color: rgb(23, 95, 92);
+    transition: color 0.5s;
 }
 #logoimg{
 	width: 4.5rem;

@@ -42,8 +42,11 @@ if(isset($_GET['excluir'])){
 					<p> SUCV </p>
 				</div>
 			</div>
+			<div class="menu">
+				<a class="title" href="inicialenfer.php">HOME ENFERMEIRO</a>
+			</div>
 		</header>
-		<div class="inferior"><form class="search-box" id=p1 method="POST" action="#">
+		<div class="inferior"><form class="search-box" id=p1 method="GET" action="#">
 			<input type="text" name="pessoa"class="search-txt" placeholder="Pesquisa de Paciente">
 			<button class="search-btn">
 				<img src="assets/306102.svg" alt="lupa" height="20" width="20">
@@ -81,6 +84,6 @@ if(isset($_GET['excluir'])){
 			    </tr>
 <?php } ?>
 			</tbody>
-		</table><a href="inicialenfer.php">Pagina inicial enfermeiros</a></div>
+		</table>
 	</body>
 </html>
