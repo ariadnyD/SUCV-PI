@@ -6,7 +6,7 @@ if (isset($_GET['cartao'])){
 		$consulta2 = $conn->query("SELECT * from tb_pacientes where pac_cartsus = $cartao");
 		$resultado2= $consulta2->fetch_assoc();
 	}else{
-		echo "Não foi possivel encontrar nada!";
+		header("Location: index.html");
 	}
 }
 if(isset($_GET['codigo'])){
