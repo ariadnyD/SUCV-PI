@@ -62,7 +62,10 @@ if(isset($_GET['excluir'])){
 		    	<tr>
 		    	<?php if(empty($resultado2)){  	 ?>
 		    		<th colspan="7"> Paciente não encontrado </th>
-		    	<?php } else{ ?>
+		    		<?php @session_start();
+				    }else if(isset($_SESSION['email'])){ ?>
+				    <th colspan="7"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
+		    	<?php } else if(isset($resultado2)){ ?>
 		    		<th colspan="6"> <?php echo $resultado2['pac_nome'];?>/<?php echo $resultado2['pac_cartsus'];?></th>
 		    	<?php }?>
 			    </tr>
