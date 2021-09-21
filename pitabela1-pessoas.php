@@ -49,7 +49,7 @@ if(isset($_GET['excluir'])){
 		<div class="inferior"><form class="search-box" id=p1 method="GET" action="#">
 			<input type="text" name="pessoa"class="search-txt" placeholder="Pesquisa de Paciente">
 			<button class="search-btn">
-				<img src="assets/306102.svg" alt="lupa" height="20" width="20">
+				<img src="assets/body/306102.svg" alt="lupa" height="20" width="20">
 			</button>
 		</form>
 		<h3> Pessoas Encontradas: </h3>

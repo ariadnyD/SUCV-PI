@@ -58,7 +58,7 @@ if (isset($_GET['excluir'])) {
 		<form class="search-box" id=p1 method="GET" action="#">
 			<input type="text" name="vacina" class="search-txt" placeholder="Pesquisa de vacina">
 			<button class="search-btn">
-				<img src="assets/306102.svg" alt="lupa" height="20" width="20">
+				<img src="assets/body/306102.svg" alt="lupa" height="20" width="20">
 			</button>
 		</form>
 		<h3> Vacinas: </h3>

@@ -31,13 +31,13 @@ include("verifica.php");
 	<form class="search-box" id=p1 method="GET" action="pitabela1-pessoas.php">
 		<input type="text" name="pessoa"class="search-txt" placeholder="Pesquisar Pessoa">
 		<button class="search-btn">
-			<img src="assets/306102.svg" alt="lupa" height="20" width="20">
+			<img src="assets/body/306102.svg" alt="lupa" height="20" width="20">
 		</button>
 	</form>
 	<form class="search-box" id="p2" method="GET" action="pitabela3-vacinas.php">
 		<input type="text" name="vacina" class="search-txt" placeholder="Pesquisar Vacina">
 		<button class="search-btn">
-			<img src="assets/306102.svg" alt="lupa" height="20" width="20">
+			<img src="assets/body/306102.svg" alt="lupa" height="20" width="20">
 		</button>
 	</form>
 	<button onclick="b1v()" id="b1" class="botao" type="button">Cadastrar Vacina</button>
