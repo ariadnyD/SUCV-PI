@@ -7,7 +7,6 @@ if (isset($_POST['email'])) {
   $consulta = $conn->query("select * from tb_enfermeiros where enf_email  = '$email' and enf_senha = '" . md5($senha) . "'");
   if ($resultado = $consulta->fetch_assoc()) {
     $_SESSION['email'] = $resultado['enf_email'];
-    $_SESSION['senha'] = $resultado['enf_senha'];
     header("Location: inicialenfer.php");
   } else {
     $erro = 1;
